@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import heroImg from "@/assets/tcon-hero-products.png";
+import taglineImg from "@/assets/tagline-creations.png";
+import aboutPile from "@/assets/about-spacers-pile.jpg";
+import aboutSite from "@/assets/about-construction.jpg";
 import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
@@ -58,6 +61,35 @@ function HomePage() {
         <div className="absolute inset-x-0 bottom-10 z-10 flex justify-center px-6">
           <div className="glass rounded-full px-6 py-2.5 font-mono text-[11px] uppercase tracking-[0.35em] text-ink">
             <span className="text-primary">●</span> &nbsp;extra care for excellent creations
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT — directly under hero */}
+      <section className="relative bg-background py-24 md:py-32">
+        <div className="mx-auto max-w-[1400px] px-6">
+          <div className="grid items-center gap-12 md:grid-cols-12">
+            <Reveal className="md:col-span-5">
+              <img src={taglineImg} alt="Extra care for excellent creations" className="w-full max-w-md mx-auto" />
+            </Reveal>
+            <Reveal className="md:col-span-7" delay={150}>
+              <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— About T-CON</p>
+              <h2 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-6xl">
+                BUILT IN KERALA. <br/><span className="text-stroke">TRUSTED WORLDWIDE.</span>
+              </h2>
+              <div className="mt-6 space-y-5 text-ink/75 md:text-lg">
+                <p>T-CON Industries manufactures fibre reinforced concrete cover blocks and rebar spacers engineered to outlast the structures they protect. Every block is extruded under ISO 9001:2015 controls, tested for compressive strength, water absorption and chloride content.</p>
+                <p>Our spacers share the same thermal expansion as the surrounding concrete — eliminating the hairline failure points introduced by plastic and steel. Specified by infrastructure, marine and high-rise contractors across India and abroad.</p>
+              </div>
+              <div className="mt-8 grid grid-cols-2 gap-3">
+                <div className="overflow-hidden rounded-lg">
+                  <img src={aboutPile} alt="T-CON spacer production" className="h-48 w-full object-cover transition hover:scale-105" />
+                </div>
+                <div className="overflow-hidden rounded-lg">
+                  <img src={aboutSite} alt="On-site construction" className="h-48 w-full object-cover transition hover:scale-105" />
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
