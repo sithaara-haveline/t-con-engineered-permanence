@@ -9,15 +9,16 @@ export function Cursor() {
     if (typeof window === "undefined") return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
     setEnabled(true);
-    let rx = 0, ry = 0, dx = 0, dy = 0, mx = 0, my = 0;
-    const onMove = (e: MouseEvent) => { mx = e.clientX; my = e.clientY; };
+    let rx = 0, ry = 0, mx = 0, my = 0;
+    const onMove = (e: MouseEvent) => {
+      mx = e.clientX; my = e.clientY;
+      if (dot.current) dot.current.style.transform = `translate3d(${mx}px, ${my}px, 0) translate(-50%, -50%)`;
+    };
     window.addEventListener("mousemove", onMove);
     let raf = 0;
     const loop = () => {
-      dx += (mx - dx) * 0.5; dy += (my - dy) * 0.5;
-      rx += (mx - rx) * 0.15; ry += (my - ry) * 0.15;
-      if (dot.current) dot.current.style.transform = `translate(${dx}px, ${dy}px)`;
-      if (ring.current) ring.current.style.transform = `translate(${rx}px, ${ry}px)`;
+      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+      if (ring.current) ring.current.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
@@ -43,8 +44,8 @@ export function Cursor() {
   if (!enabled) return null;
   return (
     <>
-      <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[9999] -ml-1 -mt-1 h-2 w-2 rounded-full bg-primary mix-blend-multiply" />
-      <div ref={ring} className="pointer-events-none fixed left-0 top-0 z-[9998] -ml-5 -mt-5 h-10 w-10 rounded-full border border-primary/50 transition-transform duration-200" />
+      <div ref={dot} className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full bg-primary" />
+      <div ref={ring} className="pointer-events-none fixed left-0 top-0 z-[9998] h-9 w-9 rounded-full border border-primary/50 transition-[width,height] duration-200" />
     </>
   );
 }
