@@ -1,8 +1,8 @@
-import singleImg from "@/assets/product-single.jpg";
-import doubleImg from "@/assets/product-double.jpg";
-import tripleImg from "@/assets/product-triple.jpg";
-import wheelImg from "@/assets/product-wheel.jpg";
-import rebarImg from "@/assets/product-rebar-cap.jpg";
+import singleImg from "@/assets/product-single.png";
+import doubleImg from "@/assets/product-double.png";
+import tripleImg from "@/assets/product-triple.webp";
+import wheelImg from "@/assets/product-wheel.png";
+import rebarImg from "@/assets/product-rebar-cap.png";
 
 export type SpecRow = { code: string; ref: string; cover: string };
 
