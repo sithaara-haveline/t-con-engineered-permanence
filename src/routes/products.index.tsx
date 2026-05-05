@@ -3,7 +3,7 @@ import { products } from "@/lib/products";
 import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
       { title: "Products — T-CON Fibre Reinforced Concrete Spacers" },
