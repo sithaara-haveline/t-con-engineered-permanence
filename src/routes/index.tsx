@@ -20,56 +20,98 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
-  const heroRef = useRef<HTMLDivElement>(null);
   const [scrollY, setScrollY] = useState(0);
+  const wideRef = useRef<HTMLDivElement>(null);
+  const [wideProgress, setWideProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
+    const onScroll = () => {
+      setScrollY(window.scrollY);
+      const el = wideRef.current;
+      if (el) {
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const total = rect.height + vh;
+        const passed = Math.min(Math.max(vh - rect.top, 0), total);
+        setWideProgress(passed / total);
+      }
+    };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
-      {/* HERO — pure product, no headings */}
-      <section ref={heroRef} className="relative min-h-[100svh] w-full overflow-hidden bg-background grid-bg">
-        {/* faint floating geometric accents */}
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 top-1/4 h-[420px] w-[420px] rounded-full bg-primary/5 blur-3xl" />
-          <div className="absolute right-0 bottom-0 h-[520px] w-[520px] rounded-full bg-ink/5 blur-3xl" />
-          <div className="absolute left-10 top-28 font-mono text-[10px] uppercase tracking-[0.4em] text-ink/40">// fibre reinforced concrete · est. kerala</div>
-          <div className="absolute right-10 top-28 font-mono text-[10px] uppercase tracking-[0.4em] text-ink/40">iso 9001:2015 — verified</div>
-          <div className="absolute left-10 bottom-10 font-mono text-[10px] uppercase tracking-[0.4em] text-ink/40">scroll ↓</div>
-          <div className="absolute right-10 bottom-10 font-mono text-[10px] uppercase tracking-[0.4em] text-ink/40">extra care · excellent creations</div>
+      {/* HERO — cinematic video */}
+      <section className="relative min-h-[100svh] w-full overflow-hidden bg-ink">
+        <video
+          src="/tcon-hero.mp4"
+          autoPlay muted loop playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ transform: `scale(${1 + Math.min(scrollY, 800) * 0.0004})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-ink/55 via-ink/25 to-ink/75" />
+        <div className="pointer-events-none absolute inset-0 grid-bg opacity-15" />
+
+        <div className="absolute left-8 top-28 z-10 hidden md:block">
+          <div className="glass-dark rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-[0.4em] text-paper/90">// fibre reinforced concrete · kerala</div>
+        </div>
+        <div className="absolute right-8 top-28 z-10 hidden md:block">
+          <div className="glass-dark rounded-full px-4 py-2 font-mono text-[10px] uppercase tracking-[0.4em] text-paper/90">iso 9001:2015</div>
         </div>
 
-        {/* huge faint backdrop type */}
-        <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-center font-display text-[28vw] leading-none tracking-tighter text-ink/[0.04]">
-          TCON
+        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-6 pb-28 pt-40">
+          <div className="max-w-3xl">
+            <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
+            <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]" style={{ animation: "fade-up 1s 0.1s both" }}>
+              WHERE VISION<br/><span className="text-primary">MEETS</span> STRUCTURE.
+            </h1>
+            <p className="mt-6 max-w-xl text-paper/80 md:text-lg" style={{ animation: "fade-up 1s 0.3s both" }}>
+              Engineered cover blocks and rebar spacers built to outlast the structures they protect. Extra care for excellent creations.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4" style={{ animation: "fade-up 1s 0.45s both" }}>
+              <Link to="/products" className="glass rounded-full px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:scale-105">Explore Products →</Link>
+              <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
+            </div>
+          </div>
+
+          <div className="mt-16 grid max-w-3xl grid-cols-3 gap-4">
+            {[["10+","Years"],["150+","Projects"],["200+","Spec Variants"]].map(([n,l]) => (
+              <div key={l} className="glass-dark rounded-xl px-5 py-4">
+                <div className="font-display text-3xl text-paper md:text-4xl">{n}</div>
+                <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-paper/60">{l}</div>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-6">
-          <img
-            src={heroImg}
-            alt="TCON fibre reinforced concrete spacers"
-            className="max-h-[78svh] w-auto object-contain drop-shadow-2xl"
-            style={{ transform: `translateY(${scrollY * -0.15}px) scale(${1 - Math.min(scrollY, 600) * 0.0003})` }}
-          />
-        </div>
-
-        {/* glass tagline pill bottom */}
-        <div className="absolute inset-x-0 bottom-10 z-10 flex justify-center px-6">
-          <div className="glass rounded-full px-6 py-2.5 font-mono text-[11px] uppercase tracking-[0.35em] text-ink">
+        <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
+          <div className="glass-dark rounded-full px-6 py-2 font-mono text-[11px] uppercase tracking-[0.35em] text-paper/90">
             <span className="text-primary">●</span> &nbsp;extra care for excellent creations
           </div>
         </div>
       </section>
 
-      {/* ABOUT — directly under hero */}
+      {/* PRODUCT LINEUP — original hero image stays in the site */}
+      <section className="relative overflow-hidden bg-background py-24">
+        <div className="pointer-events-none absolute -left-32 top-1/3 h-[500px] w-[500px] rounded-full bg-primary/5 blur-3xl" />
+        <div className="mx-auto max-w-[1400px] px-6">
+          <Reveal>
+            <p className="text-center font-mono text-xs uppercase tracking-[0.35em] text-primary">— Our complete range</p>
+            <h2 className="mt-4 text-center font-display text-5xl leading-[0.9] tracking-tight text-ink md:text-7xl">FIVE BLOCKS. <span className="text-stroke">ONE STANDARD.</span></h2>
+          </Reveal>
+          <Reveal variant="scale" delay={150}>
+            <img src={heroImg} alt="TCON spacer lineup" className="mx-auto mt-12 w-full max-w-5xl drop-shadow-2xl animate-float-slow" />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ABOUT */}
       <section className="relative bg-background py-24 md:py-32">
         <div className="mx-auto max-w-[1400px] px-6">
           <div className="grid items-center gap-12 md:grid-cols-12">
-            <Reveal className="md:col-span-5">
+            <Reveal className="md:col-span-5" variant="left">
               <img src={taglineImg} alt="Extra care for excellent creations" className="w-full max-w-md mx-auto" />
             </Reveal>
             <Reveal className="md:col-span-7" delay={150}>
@@ -82,14 +124,40 @@ function HomePage() {
                 <p>Our spacers share the same thermal expansion as the surrounding concrete — eliminating the hairline failure points introduced by plastic and steel. Specified by infrastructure, marine and high-rise contractors across India and abroad.</p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-3">
-                <div className="overflow-hidden rounded-lg">
-                  <img src={aboutPile} alt="TCON spacer production" className="h-48 w-full object-cover transition hover:scale-105" />
+                <div className="overflow-hidden rounded-lg tilt-card">
+                  <img src={aboutPile} alt="TCON spacer production" className="h-48 w-full object-cover transition duration-700 hover:scale-110" />
                 </div>
-                <div className="overflow-hidden rounded-lg">
-                  <img src={aboutSite} alt="On-site construction" className="h-48 w-full object-cover transition hover:scale-105" />
+                <div className="overflow-hidden rounded-lg tilt-card">
+                  <img src={aboutSite} alt="On-site construction" className="h-48 w-full object-cover transition duration-700 hover:scale-110" />
                 </div>
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* WIDE SCROLL IMAGE — full-width reveal */}
+      <section ref={wideRef} className="relative h-[180vh] w-full bg-ink">
+        <div
+          className="sticky top-0 h-screen w-full overflow-hidden"
+          style={{ clipPath: `inset(${Math.max(0, (1 - wideProgress * 2.6) * 50)}% 0 ${Math.max(0, (1 - wideProgress * 2.6) * 50)}% 0)` }}
+        >
+          <img
+            src={aboutPile}
+            alt="TCON production line"
+            className="absolute inset-0 h-full w-full object-cover"
+            style={{ transform: `scale(${1.1 + wideProgress * 0.2}) translateY(${(0.5 - wideProgress) * -40}px)` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/20 to-ink/50" />
+          <div className="absolute inset-0 flex items-center justify-center px-6">
+            <div
+              className="text-center"
+              style={{ opacity: Math.min(1, Math.max(0, (wideProgress - 0.25) * 2.5)), transform: `translateY(${(0.5 - wideProgress) * 80}px)` }}
+            >
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">— Production · Aluva, Kerala</p>
+              <h2 className="mt-4 font-display text-5xl leading-[0.9] tracking-tight text-paper md:text-8xl">EVERY BLOCK,<br/><span className="text-primary">EXTRUDED.</span> TESTED.</h2>
+              <div className="mx-auto mt-8 inline-block glass-dark rounded-full px-6 py-3 font-mono text-[11px] uppercase tracking-[0.35em] text-paper/90">Thousands a day · Identical · Verified</div>
+            </div>
           </div>
         </div>
       </section>
