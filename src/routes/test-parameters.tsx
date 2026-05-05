@@ -4,9 +4,9 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/test-parameters")({
   head: () => ({
     meta: [
-      { title: "Test Parameters — T-CON Spacers" },
+      { title: "Test Parameters — TCON Spacers" },
       { name: "description", content: "Independently tested. Compressive strength, water absorption, sulphate, chloride, and more." },
-      { property: "og:title", content: "T-CON Test Parameters — Verified Performance" },
+      { property: "og:title", content: "TCON Test Parameters — Verified Performance" },
       { property: "og:description", content: "Compressive strength M50+, water absorption 0.45%, salt content 0.003%." },
     ],
   }),
@@ -32,7 +32,7 @@ function TestParamsPage() {
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Verified performance</p>
           <h1 className="mt-5 font-display text-7xl leading-[0.85] tracking-tight text-ink md:text-[9rem]">TEST <br/>PARAMETERS.</h1>
-          <p className="mt-8 max-w-2xl text-ink/70">Independent laboratory results. The numbers below are why T-CON spacers are specified on critical infrastructure projects worldwide.</p>
+          <p className="mt-8 max-w-2xl text-ink/70">Independent laboratory results. The numbers below are why TCON spacers are specified on critical infrastructure projects worldwide.</p>
         </div>
       </section>
 

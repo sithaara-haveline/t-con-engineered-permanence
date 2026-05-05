@@ -1,7 +1,7 @@
 export function WhatsAppFab() {
   return (
     <a
-      href="https://wa.me/919048711001?text=Hello%20T-CON%2C%20I%27d%20like%20a%20quote."
+      href="https://wa.me/919048711001?text=Hello%20TCON%2C%20I%27d%20like%20a%20quote."
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
