@@ -105,17 +105,24 @@
 
 @layer utilities {
   .glass {
-    background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid rgba(255,255,255,0.7);
-    box-shadow: 0 10px 40px -20px rgba(0,0,0,0.25);
+    background: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,255,255,0.25));
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 12px 50px -20px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, transform 0.5s ease;
+  }
+  .glass:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(255,255,255,0.35));
+    border-color: rgba(204,0,0,0.35);
+    box-shadow: 0 20px 60px -20px rgba(204,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.7);
   }
   .glass-dark {
-    background: rgba(10,10,10,0.55);
-    backdrop-filter: blur(18px) saturate(140%);
-    -webkit-backdrop-filter: blur(18px) saturate(140%);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: linear-gradient(135deg, rgba(20,20,20,0.55), rgba(10,10,10,0.3));
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 12px 50px -20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08);
   }
   .grid-bg {
     background-image:
@@ -125,8 +132,14 @@
   }
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--tw-ease, cubic-bezier(0.16,1,0.3,1)), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
   .reveal.in { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-left.in { opacity: 1; transform: translateX(0); }
+  .reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 1s cubic-bezier(0.16,1,0.3,1), transform 1s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-scale.in { opacity: 1; transform: scale(1); }
   .text-stroke {
     -webkit-text-stroke: 1.5px var(--color-ink);
     color: transparent;
   }
+  .tilt-card { transition: transform 0.6s cubic-bezier(0.16,1,0.3,1); transform-style: preserve-3d; }
+  .tilt-card:hover { transform: perspective(1000px) rotateX(4deg) rotateY(-4deg) translateZ(10px); }
 }
