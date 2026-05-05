@@ -10,9 +10,9 @@ export const Route = createFileRoute("/products/$slug")({
   },
   head: ({ loaderData }) => ({
     meta: [
-      { title: `${loaderData?.product.name ?? "Product"} — T-CON Spacers` },
+      { title: `${loaderData?.product.name ?? "Product"} — TCON Spacers` },
       { name: "description", content: loaderData?.product.tagline ?? "" },
-      { property: "og:title", content: `${loaderData?.product.name} — T-CON` },
+      { property: "og:title", content: `${loaderData?.product.name} — TCON` },
       { property: "og:description", content: loaderData?.product.tagline ?? "" },
       { property: "og:image", content: loaderData?.product.image ?? "" },
     ],
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/products/$slug")({
 
 function ProductPage() {
   const { product } = Route.useLoaderData();
-  const quoteMsg = `Hi T-CON, I'd like a quote for the ${product.name}. Please share pricing and availability.`;
+  const quoteMsg = `Hi TCON, I'd like a quote for the ${product.name}. Please share pricing and availability.`;
 
   return (
     <>
@@ -38,7 +38,7 @@ function ProductPage() {
             <div className="relative aspect-square overflow-hidden rounded-xl bg-paper">
               <div className="absolute inset-0 grid-bg opacity-50" />
               <img src={product.image} alt={product.name} className="relative h-full w-full object-contain p-10 animate-float-slow" />
-              <div className="absolute left-5 top-5 font-mono text-[10px] uppercase tracking-widest text-ink/50">T-CON / catalogue</div>
+              <div className="absolute left-5 top-5 font-mono text-[10px] uppercase tracking-widest text-ink/50">TCON / catalogue</div>
             </div>
           </Reveal>
           <Reveal delay={150}>
