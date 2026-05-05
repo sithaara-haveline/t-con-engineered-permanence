@@ -46,7 +46,7 @@ function ProductPage() {
             <h1 className="mt-3 font-display text-6xl leading-[0.9] tracking-tight text-ink md:text-7xl">{product.name.toUpperCase()}</h1>
             <p className="mt-5 text-lg text-ink/75">{product.tagline}</p>
             <div className="mt-6 space-y-4 text-ink/70">
-              {product.description.map((d, i) => <p key={i}>{d}</p>)}
+              {product.description.map((d: string, i: number) => <p key={i}>{d}</p>)}
             </div>
             <div className="mt-10 flex flex-wrap gap-3">
               <a href={whatsappLink(quoteMsg)} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition hover:scale-105">
@@ -69,11 +69,11 @@ function ProductPage() {
               <table className="w-full font-mono text-sm">
                 <thead>
                   <tr className="bg-primary text-primary-foreground">
-                    {product.specHeaders.map((h) => <th key={h} className="px-6 py-4 text-left text-xs uppercase tracking-widest">{h}</th>)}
+                    {product.specHeaders.map((h: string) => <th key={h} className="px-6 py-4 text-left text-xs uppercase tracking-widest">{h}</th>)}
                   </tr>
                 </thead>
                 <tbody>
-                  {product.specs.map((s) => (
+                  {product.specs.map((s: { code: string; ref: string; cover: string }) => (
                     <tr key={s.code} className="border-t border-ink/10 transition-colors hover:bg-background">
                       <td className="px-6 py-4 text-ink">{s.code}</td>
                       <td className="px-6 py-4 text-ink/80">{s.ref}</td>

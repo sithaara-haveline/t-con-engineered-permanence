@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import logo from "@/assets/tcon-logo.jpg";
+import logoMark from "@/assets/tcon-logo-mark.png";
+import wordmark from "@/assets/tcon-wordmark.png";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,8 +21,8 @@ export function Navbar() {
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${show ? "py-3" : "py-5"}`}>
       <div className={`mx-auto flex max-w-[1400px] items-center justify-between rounded-full px-5 transition-all duration-500 ${show ? "glass shadow-lg py-2" : "bg-transparent py-2"}`}>
         <Link to="/" className="flex items-center gap-2.5">
-          <img src={logo} alt="TCON logo" className="h-9 w-auto object-contain" />
-          <span className="hidden font-display text-2xl tracking-wider text-ink sm:inline">TCON</span>
+          <img src={logoMark} alt="TCON" className="h-10 w-auto object-contain transition-transform duration-500 hover:rotate-12" />
+          <img src={wordmark} alt="TCON Fibre Concrete Spacers" className="hidden h-6 w-auto object-contain sm:block" />
         </Link>
         <nav className="hidden items-center gap-8 text-sm font-medium text-ink/80 md:flex">
           <Link to="/" activeOptions={{ exact: true }} className="story relative hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Home</Link>
