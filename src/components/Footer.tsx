@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="bg-ink text-paper">
       <div className="mx-auto grid max-w-[1400px] gap-10 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={logo} alt="T-CON" className="h-14 w-auto bg-white p-2 rounded" />
+          <img src={logo} alt="TCON" className="h-14 w-auto bg-white p-2 rounded" />
           <p className="mt-5 max-w-md font-display text-3xl tracking-wide">EXTRA CARE FOR EXCELLENT CREATIONS.</p>
           <p className="mt-3 max-w-md text-sm text-paper/70">Trans Emirates Fibre Concrete Industries — ISO 9001:2015 Certified Company. Manufactured in Kerala, India.</p>
         </div>

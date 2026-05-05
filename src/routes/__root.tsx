@@ -27,9 +27,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "T-CON Industries — Fibre Reinforced Concrete Spacers" },
+      { title: "TCON Industries — Fibre Reinforced Concrete Spacers" },
       { name: "description", content: "ISO 9001:2015 certified manufacturer of fibre reinforced concrete cover blocks and rebar spacers. Extra care for excellent creations." },
-      { property: "og:title", content: "T-CON — Extra care for excellent creations" },
+      { property: "og:title", content: "TCON — Extra care for excellent creations" },
       { property: "og:description", content: "Fibre reinforced concrete spacers, engineered for permanence." },
       { property: "og:type", content: "website" },
     ],

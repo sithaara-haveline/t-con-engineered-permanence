@@ -6,9 +6,9 @@ import { Marquee } from "@/components/Marquee";
 export const Route = createFileRoute("/products/")({
   head: () => ({
     meta: [
-      { title: "Products — T-CON Fibre Reinforced Concrete Spacers" },
+      { title: "Products — TCON Fibre Reinforced Concrete Spacers" },
       { name: "description", content: "Single, Double, Triple cover spacers, Wheel spacers and Rebar end caps. Click any product for full specifications." },
-      { property: "og:title", content: "T-CON Products — Cover Spacers & Rebar Caps" },
+      { property: "og:title", content: "TCON Products — Cover Spacers & Rebar Caps" },
       { property: "og:description", content: "Five products. One uncompromising standard." },
     ],
   }),

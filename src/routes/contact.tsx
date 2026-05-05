@@ -4,9 +4,9 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — T-CON Industries" },
-      { name: "description", content: "Contact T-CON for spacer specifications, samples, or quotes. Aluva, Kerala — India." },
-      { property: "og:title", content: "Contact T-CON" },
+      { title: "Contact — TCON Industries" },
+      { name: "description", content: "Contact TCON for spacer specifications, samples, or quotes. Aluva, Kerala — India." },
+      { property: "og:title", content: "Contact TCON" },
       { property: "og:description", content: "Talk to us on WhatsApp — +91 90487 11001" },
     ],
   }),
@@ -46,7 +46,7 @@ function ContactPage() {
           <Reveal className="lg:col-span-3" delay={150}>
             <div className="overflow-hidden rounded-xl border border-ink/15">
               <iframe
-                title="T-CON location"
+                title="TCON location"
                 src="https://www.google.com/maps?q=Aluva%20Ernakulam%20Kerala%20683102&output=embed"
                 width="100%" height="540" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               />

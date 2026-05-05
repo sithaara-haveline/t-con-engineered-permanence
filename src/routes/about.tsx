@@ -5,9 +5,9 @@ import { CountUp } from "@/components/CountUp";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — T-CON Industries" },
-      { name: "description", content: "T-CON, formerly Transco Spacers — ISO 9001:2015 certified manufacturer of fibre reinforced concrete spacers from Kerala, India." },
-      { property: "og:title", content: "About T-CON" },
+      { title: "About — TCON Industries" },
+      { name: "description", content: "TCON, formerly Transco Spacers — ISO 9001:2015 certified manufacturer of fibre reinforced concrete spacers from Kerala, India." },
+      { property: "og:title", content: "About TCON" },
       { property: "og:description", content: "Extra care for excellent creations." },
     ],
   }),
@@ -28,10 +28,10 @@ function AboutPage() {
         <div className="mx-auto grid max-w-[1400px] gap-16 px-6 md:grid-cols-2">
           <Reveal>
             <p className="text-lg leading-relaxed text-ink/80">
-              Trans Emirates Fibre Concrete Industries — known to engineers across India and the Middle East as <strong className="text-primary">T-CON</strong> — manufactures extruded fibre-reinforced concrete spacers from our facility in Aluva, Kerala.
+              Trans Emirates Fibre Concrete Industries — known to engineers across India and the Middle East as <strong className="text-primary">TCON</strong> — manufactures extruded fibre-reinforced concrete spacers from our facility in Aluva, Kerala.
             </p>
             <p className="mt-5 text-ink/70">
-              Originally founded as <em>Transco Spacers</em>, the brand underwent a strategic re-branding to <strong>T-CON Spacers</strong> as part of our forward-looking growth into international markets — while retaining the same engineering team, formulation, and quality systems that earned the original name its reputation.
+              Originally founded as <em>Transco Spacers</em>, the brand underwent a strategic re-branding to <strong>TCON Spacers</strong> as part of our forward-looking growth into international markets — while retaining the same engineering team, formulation, and quality systems that earned the original name its reputation.
             </p>
             <p className="mt-5 text-ink/70">
               We are an ISO 9001:2015 certified company, supported by the Ministry of MSME, Government of India.

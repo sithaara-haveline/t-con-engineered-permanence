@@ -12,7 +12,7 @@ import { products } from "@/lib/products";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "T-CON — Extra care for excellent creations" },
+      { title: "TCON — Extra care for excellent creations" },
       { name: "description", content: "Fibre reinforced concrete spacers — engineered for permanence. ISO 9001:2015 certified, made in Kerala, India." },
     ],
   }),
@@ -45,13 +45,13 @@ function HomePage() {
 
         {/* huge faint backdrop type */}
         <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-center font-display text-[28vw] leading-none tracking-tighter text-ink/[0.04]">
-          T-CON
+          TCON
         </div>
 
         <div className="relative z-10 flex min-h-[100svh] items-center justify-center px-6">
           <img
             src={heroImg}
-            alt="T-CON fibre reinforced concrete spacers"
+            alt="TCON fibre reinforced concrete spacers"
             className="max-h-[78svh] w-auto object-contain drop-shadow-2xl"
             style={{ transform: `translateY(${scrollY * -0.15}px) scale(${1 - Math.min(scrollY, 600) * 0.0003})` }}
           />
@@ -73,17 +73,17 @@ function HomePage() {
               <img src={taglineImg} alt="Extra care for excellent creations" className="w-full max-w-md mx-auto" />
             </Reveal>
             <Reveal className="md:col-span-7" delay={150}>
-              <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— About T-CON</p>
+              <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— About TCON</p>
               <h2 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-6xl">
                 BUILT IN KERALA. <br/><span className="text-stroke">TRUSTED WORLDWIDE.</span>
               </h2>
               <div className="mt-6 space-y-5 text-ink/75 md:text-lg">
-                <p>T-CON Industries manufactures fibre reinforced concrete cover blocks and rebar spacers engineered to outlast the structures they protect. Every block is extruded under ISO 9001:2015 controls, tested for compressive strength, water absorption and chloride content.</p>
+                <p>TCON Industries manufactures fibre reinforced concrete cover blocks and rebar spacers engineered to outlast the structures they protect. Every block is extruded under ISO 9001:2015 controls, tested for compressive strength, water absorption and chloride content.</p>
                 <p>Our spacers share the same thermal expansion as the surrounding concrete — eliminating the hairline failure points introduced by plastic and steel. Specified by infrastructure, marine and high-rise contractors across India and abroad.</p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-3">
                 <div className="overflow-hidden rounded-lg">
-                  <img src={aboutPile} alt="T-CON spacer production" className="h-48 w-full object-cover transition hover:scale-105" />
+                  <img src={aboutPile} alt="TCON spacer production" className="h-48 w-full object-cover transition hover:scale-105" />
                 </div>
                 <div className="overflow-hidden rounded-lg">
                   <img src={aboutSite} alt="On-site construction" className="h-48 w-full object-cover transition hover:scale-105" />
@@ -115,7 +115,7 @@ function HomePage() {
           </Reveal>
           <Reveal className="md:col-span-7" delay={150}>
             <div className="space-y-6 text-base leading-relaxed text-ink/75 md:text-lg">
-              <p>T-CON Spacers are extruded fibre-reinforced concrete blocks engineered to share the same thermal expansion as the structure they protect — eliminating the potential failure points that plastic or steel spacers introduce.</p>
+              <p>TCON Spacers are extruded fibre-reinforced concrete blocks engineered to share the same thermal expansion as the structure they protect — eliminating the potential failure points that plastic or steel spacers introduce.</p>
               <p>Sulphate resistant. Chloride resistant. Fire resistant. Built to last as long as the concrete around them — because they <em className="text-primary not-italic">are</em> concrete.</p>
               <p className="font-mono text-sm">Trusted across infrastructure, precast, marine, and high-rise projects.</p>
             </div>
@@ -180,7 +180,7 @@ function HomePage() {
       <section className="bg-ink py-28 text-paper">
         <div className="mx-auto max-w-[1400px] px-6">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Why T-CON</p>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Why TCON</p>
             <h2 className="mt-4 font-display text-6xl tracking-tight md:text-8xl">ENGINEERED <br/><span className="text-primary">FOR PERMANENCE.</span></h2>
           </Reveal>
           <div className="mt-16 grid gap-px bg-white/10 md:grid-cols-2">
@@ -211,7 +211,7 @@ function HomePage() {
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-ink/70">Talk to our team for technical specs, samples, or a project quote — direct on WhatsApp.</p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a href="https://wa.me/919048711001?text=Hi%20T-CON%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105">Get a quote on WhatsApp</a>
+              <a href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105">Get a quote on WhatsApp</a>
               <Link to="/products" className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper">Browse products</Link>
             </div>
           </Reveal>
