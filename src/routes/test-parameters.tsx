@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
+import { motion } from "framer-motion";
+import { useReducedAnim, dist, stagger } from "@/lib/motion";
 
 export const Route = createFileRoute("/test-parameters")({
   head: () => ({
@@ -26,6 +28,7 @@ const rows: Array<[string, string]> = [
 ];
 
 function TestParamsPage() {
+  const { reduce, mobile } = useReducedAnim();
   return (
     <>
       <section className="bg-background pt-40 pb-16 grid-bg">
@@ -36,7 +39,7 @@ function TestParamsPage() {
         </div>
       </section>
 
-      <section className="bg-background pb-32">
+      <section className="bg-background pb-32 overflow-x-hidden">
         <div className="mx-auto max-w-[1100px] px-6">
           <Reveal>
             <div className="overflow-hidden rounded-lg border border-ink/15">
@@ -49,10 +52,28 @@ function TestParamsPage() {
                 </thead>
                 <tbody>
                   {rows.map(([k, v], i) => (
-                    <tr key={k} className="border-t border-ink/10 transition-colors hover:bg-paper" style={{ animation: `fade-up 0.5s ${i * 60}ms both` }}>
+                    <motion.tr
+                      key={k}
+                      className="border-t border-ink/10 transition-colors hover:bg-paper"
+                      initial={{ opacity: 0, x: dist(-40, mobile, reduce) }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, amount: 0.1 }}
+                      transition={{ duration: 0.5, ease: "easeOut", delay: i * stagger(0.06, mobile, reduce) }}
+                    >
                       <td className="px-6 py-5 text-sm text-ink">{k}</td>
-                      <td className="px-6 py-5 text-sm font-medium text-primary">{v}</td>
-                    </tr>
+                      <motion.td
+                        className="px-6 py-5 text-sm font-medium text-primary"
+                        initial={{ backgroundColor: "rgba(204,0,0,0)", color: "var(--color-primary)" }}
+                        whileInView={reduce ? {} : {
+                          backgroundColor: ["rgba(204,0,0,0)", "rgba(204,0,0,0.85)", "rgba(204,0,0,0)"],
+                          color: ["var(--color-primary)", "#ffffff", "var(--color-primary)"],
+                        }}
+                        viewport={{ once: true, amount: 0.1 }}
+                        transition={{ duration: 0.55, ease: "easeOut", delay: i * stagger(0.06, mobile, reduce) + 0.25, times: [0, 0.45, 1] }}
+                      >
+                        {v}
+                      </motion.td>
+                    </motion.tr>
                   ))}
                 </tbody>
               </table>
