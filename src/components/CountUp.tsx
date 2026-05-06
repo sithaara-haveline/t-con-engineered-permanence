@@ -4,6 +4,9 @@ export function CountUp({ to, suffix = "", decimals = 0, duration = 1800 }: { to
   const [v, setV] = useState(0);
   useEffect(() => {
     const el = ref.current; if (!el) return;
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setV(to); return;
+    }
     let raf = 0; let start = 0;
     const io = new IntersectionObserver((es) => {
       es.forEach((e) => {
