@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { products } from "@/lib/products";
-import { Reveal } from "@/components/Reveal";
 import { Marquee } from "@/components/Marquee";
 import { motion } from "framer-motion";
 import { useReducedAnim, dist, stagger } from "@/lib/motion";
