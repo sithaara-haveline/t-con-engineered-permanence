@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
+import { motion } from "framer-motion";
+import { useReducedAnim, dist, stagger } from "@/lib/motion";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -15,12 +17,34 @@ export const Route = createFileRoute("/about")({
 });
 
 function AboutPage() {
+  const { reduce, mobile } = useReducedAnim();
+  const benefits = ["Excellent Compatibility","Excellent Quality","Low Permeability","Save Cost & Time","High Compressive Strength","Adequate Tensile Strength","Fire & Weather Resistance","Material Strength & Uniformity"];
+  const quote = "WE DON'T FILL GAPS. WE ELIMINATE WEAKNESS.".split(" ");
+  const headlineLines: { text: string; from: number; cls?: string }[] = [
+    { text: "EXTRA CARE.", from: -80 },
+    { text: "EXCELLENT", from: 80, cls: "text-primary" },
+    { text: "CREATIONS.", from: -80 },
+  ];
   return (
     <>
-      <section className="bg-background pt-40 pb-20 grid-bg">
+      <section className="bg-background pt-40 pb-20 grid-bg overflow-x-hidden">
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Our story</p>
-          <h1 className="mt-5 font-display text-7xl leading-[0.85] tracking-tight text-ink md:text-[9rem]">EXTRA CARE.<br/><span className="text-primary">EXCELLENT</span><br/>CREATIONS.</h1>
+          <h1 className="mt-5 font-display text-7xl leading-[0.85] tracking-tight text-ink md:text-[9rem]">
+            {headlineLines.map((l, i) => (
+              <motion.span
+                key={i}
+                className={`block ${l.cls ?? ""}`}
+                style={{ willChange: "transform" }}
+                initial={{ opacity: 0, x: dist(l.from, mobile, reduce) }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: i * stagger(0.15, mobile, reduce) }}
+              >
+                {l.text}
+              </motion.span>
+            ))}
+          </h1>
         </div>
       </section>
 
@@ -40,7 +64,24 @@ function AboutPage() {
           <Reveal delay={150}>
             <div className="glass rounded-xl p-8">
               <p className="font-mono text-xs uppercase tracking-widest text-primary">Quote</p>
-              <p className="mt-5 font-display text-4xl leading-tight text-ink md:text-5xl">"WE DON'T <span className="text-stroke">FILL GAPS.</span> WE ELIMINATE <span className="text-primary">WEAKNESS.</span>"</p>
+              <p className="mt-5 font-display text-4xl leading-tight text-ink md:text-5xl">
+                "{quote.map((w, i) => {
+                  const stroke = ["FILL", "GAPS."].includes(w);
+                  const red = w === "WEAKNESS.";
+                  return (
+                    <motion.span
+                      key={i}
+                      className={`inline-block mr-[0.25em] ${stroke ? "text-stroke" : ""} ${red ? "text-primary" : ""}`}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true, amount: 0.4 }}
+                      transition={{ duration: 0.5, ease: "easeOut", delay: i * stagger(0.06, mobile, reduce) }}
+                    >
+                      {w}
+                    </motion.span>
+                  );
+                })}"
+              </p>
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div>
                   <div className="font-display text-5xl text-primary"><CountUp to={9001} /></div>
@@ -56,17 +97,24 @@ function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-ink py-24 text-paper">
+      <section className="bg-ink py-24 text-paper overflow-x-hidden">
         <div className="mx-auto max-w-[1400px] px-6">
           <Reveal>
             <h2 className="font-display text-5xl tracking-tight md:text-7xl">BENEFITS THAT <br/><span className="text-primary">COMPOUND.</span></h2>
           </Reveal>
           <div className="mt-12 grid gap-px bg-white/10 md:grid-cols-4">
-            {["Excellent Compatibility","Excellent Quality","Low Permeability","Save Cost & Time","High Compressive Strength","Adequate Tensile Strength","Fire & Weather Resistance","Material Strength & Uniformity"].map((b, i) => (
-              <Reveal key={b} delay={i * 60} className="bg-ink p-8">
+            {benefits.map((b, i) => (
+              <motion.div
+                key={b}
+                className="bg-ink p-8"
+                initial={{ opacity: 0, x: dist(-30, mobile, reduce) }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: i * stagger(0.08, mobile, reduce) }}
+              >
                 <div className="font-mono text-[10px] uppercase tracking-widest text-primary">0{i + 1}</div>
                 <p className="mt-4 font-display text-2xl leading-tight">{b.toUpperCase()}</p>
-              </Reveal>
+              </motion.div>
             ))}
           </div>
         </div>
