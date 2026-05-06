@@ -300,3 +300,37 @@ function HomePage() {
     </>
   );
 }
+
+function PermanenceGrid({ mobile, reduce }: { mobile: boolean; reduce: boolean }) {
+  const items: [string, string][] = [
+    ["Excellent Compatibility", "Same thermal coefficient as concrete — no differential stress, no micro-cracks."],
+    ["High Compressive Strength", "M50+ rated. Withstands site abuse during placement and casting."],
+    ["Fire & Weather Resistance", "Non-combustible mineral matrix. UV, frost, and humidity proof."],
+    ["Low Permeability", "0.45% water absorption. Stops chloride ingress at the bar interface."],
+    ["Cost & Time Saving", "Faster placement, fewer reworks. Lower total cost than plastic or PVC."],
+    ["Material Uniformity", "Extruded process delivers identical density and dimensions, batch after batch."],
+  ];
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
+  return (
+    <div ref={ref} className="mt-16 grid gap-px bg-white/10 md:grid-cols-2">
+      {items.map(([t, d], i) => (
+        <motion.div
+          key={t}
+          className="group relative overflow-hidden bg-ink p-10"
+          initial={{ opacity: 0, y: dist(40, mobile, reduce), rotate: reduce ? 0 : 1.5 }}
+          animate={inView ? { opacity: 1, y: 0, rotate: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut", delay: i * stagger(0.1, mobile, reduce) }}
+          whileHover={reduce ? undefined : { y: -4, boxShadow: "0 30px 60px -20px rgba(0,0,0,0.6)" }}
+        >
+          <div className="pointer-events-none absolute -right-4 -top-6 font-display text-[8rem] leading-none text-paper/0 transition-all duration-500 group-hover:text-paper/[0.05] group-hover:scale-[4]">
+            0{i + 1}
+          </div>
+          <div className="relative font-mono text-xs text-primary">0{i + 1}</div>
+          <h3 className="relative mt-4 font-display text-3xl tracking-wide">{t}</h3>
+          <p className="relative mt-3 text-sm leading-relaxed text-paper/65">{d}</p>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
