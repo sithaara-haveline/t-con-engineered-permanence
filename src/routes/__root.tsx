@@ -4,6 +4,7 @@ import { Cursor } from "@/components/Cursor";
 import { Navbar } from "@/components/Navbar";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Footer } from "@/components/Footer";
+import { PageTransition } from "@/components/PageTransition";
 
 function NotFoundComponent() {
   return (
@@ -68,7 +69,9 @@ function RootComponent() {
       <Cursor />
       <Navbar />
       <main className="min-h-screen">
-        <Outlet />
+        <PageTransition>
+          <Outlet />
+        </PageTransition>
       </main>
       <Footer />
       <WhatsAppFab />

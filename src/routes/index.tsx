@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import heroImg from "@/assets/tcon-hero-products.png";
 import taglineImg from "@/assets/tagline-creations.png";
 import aboutPile from "@/assets/about-spacers-pile.jpg";
@@ -8,6 +9,7 @@ import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
 import { products } from "@/lib/products";
+import { useReducedAnim, dist, stagger } from "@/lib/motion";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,6 +25,9 @@ function HomePage() {
   const [scrollY, setScrollY] = useState(0);
   const wideRef = useRef<HTMLDivElement>(null);
   const [wideProgress, setWideProgress] = useState(0);
+  const { reduce, mobile } = useReducedAnim();
+  const headline = ["WHERE", "VISION", "MEETS", "STRUCTURE."];
+  const headlineDone = 0.3 + headline.length * 0.08 + 0.6; // last word ends ~ start+0.6
 
   useEffect(() => {
     const onScroll = () => {
@@ -48,7 +53,7 @@ function HomePage() {
         <video
           src="/tcon-hero.mp4"
           autoPlay muted loop playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover hero-breath"
           style={{ transform: `scale(${1 + Math.min(scrollY, 800) * 0.0004})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-ink/55 via-ink/25 to-ink/75" />
@@ -64,22 +69,44 @@ function HomePage() {
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-6 pb-28 pt-40">
           <div className="max-w-3xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
-            <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]" style={{ animation: "fade-up 1s 0.1s both" }}>
-              WHERE VISION<br/><span className="text-primary">MEETS</span> STRUCTURE.
+            <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]">
+              <span className="flex flex-wrap gap-x-[0.25em]">
+                {headline.map((w, i) => (
+                  <span key={i} className="inline-block overflow-hidden pb-[0.05em]">
+                    <motion.span
+                      className={`inline-block ${w === "MEETS" ? "text-primary" : ""}`}
+                      style={{ willChange: "transform" }}
+                      initial={{ y: reduce ? 0 : "100%", opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : 0.3 + i * stagger(0.08, mobile, false) }}
+                      onAnimationComplete={(e: any) => { e && (e.willChange = "auto"); }}
+                    >
+                      {w}
+                    </motion.span>
+                  </span>
+                ))}
+              </span>
             </h1>
             <p className="mt-6 max-w-xl text-paper/80 md:text-lg" style={{ animation: "fade-up 1s 0.3s both" }}>
               Engineered cover blocks and rebar spacers built to outlast the structures they protect. Extra care for excellent creations.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4" style={{ animation: "fade-up 1s 0.45s both" }}>
+            <motion.div
+              className="mt-10 flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: reduce ? 0 : 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: reduce ? 0 : headlineDone + 0.1 }}
+            >
               <Link to="/products" className="glass rounded-full px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:scale-105">Explore Products →</Link>
               <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
-            </div>
+            </motion.div>
           </div>
 
           <div className="mt-16 grid max-w-3xl grid-cols-3 gap-4">
-            {[["10+","Years"],["150+","Projects"],["200+","Spec Variants"]].map(([n,l]) => (
-              <div key={l} className="glass-dark rounded-xl px-5 py-4">
-                <div className="font-display text-3xl text-paper md:text-4xl">{n}</div>
+            {[[10,"Years"],[150,"Projects"],[200,"Spec Variants"]].map(([n,l]) => (
+              <div key={l as string} className="glass-dark rounded-xl px-5 py-4">
+                <div className="font-display text-3xl text-paper md:text-4xl">
+                  <CountUp to={n as number} suffix="+" duration={1500} />
+                </div>
                 <div className="mt-1 font-mono text-[10px] uppercase tracking-widest text-paper/60">{l}</div>
               </div>
             ))}
@@ -251,22 +278,7 @@ function HomePage() {
             <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Why TCON</p>
             <h2 className="mt-4 font-display text-6xl tracking-tight md:text-8xl">ENGINEERED <br/><span className="text-primary">FOR PERMANENCE.</span></h2>
           </Reveal>
-          <div className="mt-16 grid gap-px bg-white/10 md:grid-cols-2">
-            {[
-              ["Excellent Compatibility", "Same thermal coefficient as concrete — no differential stress, no micro-cracks."],
-              ["High Compressive Strength", "M50+ rated. Withstands site abuse during placement and casting."],
-              ["Fire & Weather Resistance", "Non-combustible mineral matrix. UV, frost, and humidity proof."],
-              ["Low Permeability", "0.45% water absorption. Stops chloride ingress at the bar interface."],
-              ["Cost & Time Saving", "Faster placement, fewer reworks. Lower total cost than plastic or PVC."],
-              ["Material Uniformity", "Extruded process delivers identical density and dimensions, batch after batch."],
-            ].map(([t, d], i) => (
-              <Reveal key={t} delay={i * 80} className="bg-ink p-10">
-                <div className="font-mono text-xs text-primary">0{i + 1}</div>
-                <h3 className="mt-4 font-display text-3xl tracking-wide">{t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-paper/65">{d}</p>
-              </Reveal>
-            ))}
-          </div>
+          <PermanenceGrid mobile={mobile} reduce={reduce} />
         </div>
       </section>
 
@@ -286,5 +298,39 @@ function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+function PermanenceGrid({ mobile, reduce }: { mobile: boolean; reduce: boolean }) {
+  const items: [string, string][] = [
+    ["Excellent Compatibility", "Same thermal coefficient as concrete — no differential stress, no micro-cracks."],
+    ["High Compressive Strength", "M50+ rated. Withstands site abuse during placement and casting."],
+    ["Fire & Weather Resistance", "Non-combustible mineral matrix. UV, frost, and humidity proof."],
+    ["Low Permeability", "0.45% water absorption. Stops chloride ingress at the bar interface."],
+    ["Cost & Time Saving", "Faster placement, fewer reworks. Lower total cost than plastic or PVC."],
+    ["Material Uniformity", "Extruded process delivers identical density and dimensions, batch after batch."],
+  ];
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.2 });
+  return (
+    <div ref={ref} className="mt-16 grid gap-px bg-white/10 md:grid-cols-2">
+      {items.map(([t, d], i) => (
+        <motion.div
+          key={t}
+          className="group relative overflow-hidden bg-ink p-10"
+          initial={{ opacity: 0, y: dist(40, mobile, reduce), rotate: reduce ? 0 : 1.5 }}
+          animate={inView ? { opacity: 1, y: 0, rotate: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut", delay: i * stagger(0.1, mobile, reduce) }}
+          whileHover={reduce ? undefined : { y: -4, boxShadow: "0 30px 60px -20px rgba(0,0,0,0.6)" }}
+        >
+          <div className="pointer-events-none absolute -right-4 -top-6 font-display text-[8rem] leading-none text-paper/0 transition-all duration-500 group-hover:text-paper/[0.05] group-hover:scale-[4]">
+            0{i + 1}
+          </div>
+          <div className="relative font-mono text-xs text-primary">0{i + 1}</div>
+          <h3 className="relative mt-4 font-display text-3xl tracking-wide">{t}</h3>
+          <p className="relative mt-3 text-sm leading-relaxed text-paper/65">{d}</p>
+        </motion.div>
+      ))}
+    </div>
   );
 }
