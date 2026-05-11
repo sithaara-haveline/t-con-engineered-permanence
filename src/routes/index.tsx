@@ -271,6 +271,74 @@ function HomePage() {
         </div>
       </section>
 
+      {/* RESPONSIBILITY / COMPARISON */}
+      <section className="bg-background py-28 md:py-32">
+        <div className="mx-auto max-w-[1400px] px-6">
+          <Reveal>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— The stakes</p>
+            <h2 className="mt-4 max-w-5xl font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-7xl">
+              THE SMALLEST COMPONENT.<br/><span className="text-stroke">THE BIGGEST RESPONSIBILITY.</span>
+            </h2>
+            <p className="mt-6 max-w-2xl text-ink/70 md:text-lg">
+              Don't compromise a multi-million dollar structure with an uncertified spacer.
+            </p>
+          </Reveal>
+
+          <Reveal delay={150}>
+            <div className="mt-14 overflow-hidden rounded-2xl glass">
+              <div className="grid grid-cols-2">
+                <div className="bg-ink/5 px-6 py-5 md:px-10 md:py-7">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">— Standard</p>
+                  <h3 className="mt-2 font-display text-2xl tracking-wide text-ink/60 md:text-3xl">Standard Local Block</h3>
+                </div>
+                <div className="bg-ink px-6 py-5 md:px-10 md:py-7">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">— Certified</p>
+                  <h3 className="mt-2 font-display text-2xl tracking-wide text-paper md:text-3xl">TCON Certified Block</h3>
+                </div>
+              </div>
+              {[
+                ["Hand-cast, inconsistent mix", "Machine-extruded, ISO 9001:2015 controlled"],
+                ["Unknown compressive grade", "M50+ verified, lab certified"],
+                ["High porosity, moisture ingress", "0.45% water absorption — chloride resistant"],
+                ["Plastic or steel — different thermal expansion", "Same thermal expansion as surrounding concrete — zero cold joints"],
+                ["No compliance documentation", "BS 8500 / Eurocode 2 / ACI aligned, TDS available"],
+              ].map(([l, r], i) => (
+                <div key={i} className="grid grid-cols-2 border-t border-ink/10">
+                  <div className="bg-ink/[0.03] px-6 py-5 text-sm text-ink/55 md:px-10 md:py-7 md:text-base">{l}</div>
+                  <div className="bg-ink px-6 py-5 text-sm text-paper md:px-10 md:py-7 md:text-base">
+                    <span className="mr-2 text-primary">✓</span>{r}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <p className="mx-auto mt-14 max-w-4xl text-center font-display text-3xl leading-tight tracking-tight text-ink md:text-5xl">
+              When moisture reaches the steel, the structure fails. <span className="text-primary">TCON ensures it never does.</span>
+            </p>
+            <p className="mx-auto mt-6 max-w-2xl text-center text-ink/70">
+              Specified by structural engineers across India and the Middle East. Our Technical Data Sheet and laboratory test certificates are available on request for every product batch.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
+                target="_blank" rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
+              >
+                Request Technical Data Sheet
+              </a>
+              <Link
+                to="/test-parameters"
+                className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper"
+              >
+                View Test Parameters →
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* WHY */}
       <section className="bg-ink py-28 text-paper">
         <div className="mx-auto max-w-[1400px] px-6">
