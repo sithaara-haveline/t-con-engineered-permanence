@@ -356,7 +356,7 @@ function PermanenceGrid({ mobile, reduce }: { mobile: boolean; reduce: boolean }
     ["Material Uniformity", "Extruded process delivers identical density and dimensions, batch after batch."],
   ];
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
+  const inView = true;
   return (
     <div ref={ref} className="mt-16 grid gap-px bg-white/10 md:grid-cols-2">
       {items.map(([t, d], i) => (
