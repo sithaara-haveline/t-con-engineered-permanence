@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import heroImg from "@/assets/tcon-hero-products.png";
 import taglineImg from "@/assets/tagline-creations.png";
+import logoMark from "@/assets/tcon-logo-mark.png";
 import aboutPile from "@/assets/about-spacers-pile.jpg";
 import aboutSite from "@/assets/about-construction.jpg";
 import { Marquee } from "@/components/Marquee";
@@ -67,6 +68,7 @@ function HomePage() {
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-6 pb-28 pt-40">
+          <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
             <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]">
@@ -100,9 +102,18 @@ function HomePage() {
               <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
             </motion.div>
           </div>
+          <motion.img
+            src={logoMark}
+            alt="TCON"
+            className="hidden md:block h-[18rem] lg:h-[22rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(204,0,0,0.35)]"
+            initial={{ opacity: 0, scale: reduce ? 1 : 0.6, rotate: reduce ? 0 : -10 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : 0.6 }}
+          />
+          </div>
 
           <div className="mt-16 grid max-w-3xl grid-cols-3 gap-4">
-            {[[10,"Years"],[150,"Projects"],[200,"Spec Variants"]].map(([n,l]) => (
+            {[[10,"Years"],[50,"Trusted Clients"],[6,"Countries Served"]].map(([n,l]) => (
               <div key={l as string} className="glass-dark rounded-xl px-5 py-4">
                 <div className="font-display text-3xl text-paper md:text-4xl">
                   <CountUp to={n as number} suffix="+" duration={1500} />
