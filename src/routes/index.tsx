@@ -1,8 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import heroImg from "@/assets/tcon-hero-products.png";
 import taglineImg from "@/assets/tagline-creations.png";
+import logoMark from "@/assets/tcon-logo-mark.png";
 import aboutPile from "@/assets/about-spacers-pile.jpg";
 import aboutSite from "@/assets/about-construction.jpg";
 import { Marquee } from "@/components/Marquee";
@@ -67,6 +68,7 @@ function HomePage() {
         </div>
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-6 pb-28 pt-40">
+          <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
             <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]">
@@ -100,9 +102,18 @@ function HomePage() {
               <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
             </motion.div>
           </div>
+          <motion.img
+            src={logoMark}
+            alt="TCON"
+            className="hidden md:block h-[18rem] lg:h-[22rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(204,0,0,0.35)]"
+            initial={{ opacity: 0, scale: reduce ? 1 : 0.6, rotate: reduce ? 0 : -10 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : 0.6 }}
+          />
+          </div>
 
           <div className="mt-16 grid max-w-3xl grid-cols-3 gap-4">
-            {[[10,"Years"],[150,"Projects"],[200,"Spec Variants"]].map(([n,l]) => (
+            {[[10,"Years"],[50,"Trusted Clients"],[6,"Countries Served"]].map(([n,l]) => (
               <div key={l as string} className="glass-dark rounded-xl px-5 py-4">
                 <div className="font-display text-3xl text-paper md:text-4xl">
                   <CountUp to={n as number} suffix="+" duration={1500} />
@@ -271,82 +282,48 @@ function HomePage() {
         </div>
       </section>
 
-      {/* RESPONSIBILITY / COMPARISON */}
-      <section className="bg-background py-28 md:py-32">
-        <div className="mx-auto max-w-[1400px] px-6">
+      {/* WHY US LINK */}
+      <section className="bg-background py-20">
+        <div className="mx-auto max-w-[1400px] px-6 text-center">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— The stakes</p>
-            <h2 className="mt-4 max-w-5xl font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-7xl">
-              THE SMALLEST COMPONENT.<br/><span className="text-stroke">THE BIGGEST RESPONSIBILITY.</span>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— The full story</p>
+            <h2 className="mx-auto mt-4 max-w-3xl font-display text-4xl leading-tight tracking-tight text-ink md:text-6xl">
+              SEE WHY ENGINEERS CHOOSE <span className="text-primary">TCON.</span>
             </h2>
-            <p className="mt-6 max-w-2xl text-ink/70 md:text-lg">
-              Don't compromise a multi-million dollar structure with an uncertified spacer.
-            </p>
-          </Reveal>
-
-          <Reveal delay={150}>
-            <div className="mt-14 overflow-hidden rounded-2xl glass">
-              <div className="grid grid-cols-2">
-                <div className="bg-ink/5 px-6 py-5 md:px-10 md:py-7">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-ink/50">— Standard</p>
-                  <h3 className="mt-2 font-display text-2xl tracking-wide text-ink/60 md:text-3xl">Standard Local Block</h3>
-                </div>
-                <div className="bg-ink px-6 py-5 md:px-10 md:py-7">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">— Certified</p>
-                  <h3 className="mt-2 font-display text-2xl tracking-wide text-paper md:text-3xl">TCON Certified Block</h3>
-                </div>
-              </div>
-              {[
-                ["Hand-cast, inconsistent mix", "Machine-extruded, ISO 9001:2015 controlled"],
-                ["Unknown compressive grade", "M50+ verified, lab certified"],
-                ["High porosity, moisture ingress", "0.45% water absorption — chloride resistant"],
-                ["Plastic or steel — different thermal expansion", "Same thermal expansion as surrounding concrete — zero cold joints"],
-                ["No compliance documentation", "BS 8500 / Eurocode 2 / ACI aligned, TDS available"],
-              ].map(([l, r], i) => (
-                <div key={i} className="grid grid-cols-2 border-t border-ink/10">
-                  <div className="bg-ink/[0.03] px-6 py-5 text-sm text-ink/55 md:px-10 md:py-7 md:text-base">{l}</div>
-                  <div className="bg-ink px-6 py-5 text-sm text-paper md:px-10 md:py-7 md:text-base">
-                    <span className="mr-2 text-primary">✓</span>{r}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <p className="mx-auto mt-14 max-w-4xl text-center font-display text-3xl leading-tight tracking-tight text-ink md:text-5xl">
-              When moisture reaches the steel, the structure fails. <span className="text-primary">TCON ensures it never does.</span>
-            </p>
-            <p className="mx-auto mt-6 max-w-2xl text-center text-ink/70">
-              Specified by structural engineers across India and the Middle East. Our Technical Data Sheet and laboratory test certificates are available on request for every product batch.
-            </p>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
-                target="_blank" rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
-              >
-                Request Technical Data Sheet
-              </a>
-              <Link
-                to="/test-parameters"
-                className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper"
-              >
-                View Test Parameters →
+            <div className="mt-8">
+              <Link to="/about" className="inline-flex items-center gap-2 rounded-full bg-ink px-8 py-4 text-sm font-semibold uppercase tracking-widest text-paper transition hover:bg-primary">
+                Why us? →
               </Link>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* WHY */}
-      <section className="bg-ink py-28 text-paper">
-        <div className="mx-auto max-w-[1400px] px-6">
+      {/* COMPACT REQUEST TDS */}
+      <section className="bg-background pb-28">
+        <div className="mx-auto max-w-[1100px] px-6">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Why TCON</p>
-            <h2 className="mt-4 font-display text-6xl tracking-tight md:text-8xl">ENGINEERED <br/><span className="text-primary">FOR PERMANENCE.</span></h2>
+            <div className="glass rounded-2xl p-10 text-center md:p-14">
+              <p className="font-display text-3xl leading-tight tracking-tight text-ink md:text-4xl">
+                Every batch lab-tested. <span className="text-primary">TDS available on request.</span>
+              </p>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                <a
+                  href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
+                  target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
+                >
+                  Request Technical Data Sheet
+                </a>
+                <Link
+                  to="/test-parameters"
+                  className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper"
+                >
+                  View Test Parameters →
+                </Link>
+              </div>
+            </div>
           </Reveal>
-          <PermanenceGrid mobile={mobile} reduce={reduce} />
         </div>
       </section>
 
@@ -366,39 +343,5 @@ function HomePage() {
         </div>
       </section>
     </>
-  );
-}
-
-function PermanenceGrid({ mobile, reduce }: { mobile: boolean; reduce: boolean }) {
-  const items: [string, string][] = [
-    ["Excellent Compatibility", "Same thermal coefficient as concrete — no differential stress, no micro-cracks."],
-    ["High Compressive Strength", "M50+ rated. Withstands site abuse during placement and casting."],
-    ["Fire & Weather Resistance", "Non-combustible mineral matrix. UV, frost, and humidity proof."],
-    ["Low Permeability", "0.45% water absorption. Stops chloride ingress at the bar interface."],
-    ["Cost & Time Saving", "Faster placement, fewer reworks. Lower total cost than plastic or PVC."],
-    ["Material Uniformity", "Extruded process delivers identical density and dimensions, batch after batch."],
-  ];
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
-  return (
-    <div ref={ref} className="mt-16 grid gap-px bg-white/10 md:grid-cols-2">
-      {items.map(([t, d], i) => (
-        <motion.div
-          key={t}
-          className="group relative overflow-hidden bg-ink p-10"
-          initial={{ opacity: 0, y: dist(40, mobile, reduce), rotate: reduce ? 0 : 1.5 }}
-          animate={inView ? { opacity: 1, y: 0, rotate: 0 } : {}}
-          transition={{ duration: 0.7, ease: "easeOut", delay: i * stagger(0.1, mobile, reduce) }}
-          whileHover={reduce ? undefined : { y: -4, boxShadow: "0 30px 60px -20px rgba(0,0,0,0.6)" }}
-        >
-          <div className="pointer-events-none absolute -right-4 -top-6 font-display text-[8rem] leading-none text-paper/0 transition-all duration-500 group-hover:text-paper/[0.05] group-hover:scale-[4]">
-            0{i + 1}
-          </div>
-          <div className="relative font-mono text-xs text-primary">0{i + 1}</div>
-          <h3 className="relative mt-4 font-display text-3xl tracking-wide">{t}</h3>
-          <p className="relative mt-3 text-sm leading-relaxed text-paper/65">{d}</p>
-        </motion.div>
-      ))}
-    </div>
   );
 }

@@ -43,7 +43,7 @@ export function Navbar() {
           <Link to="/" activeOptions={{ exact: true }} className="story relative hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Home</Link>
           <Link to="/products" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Products</Link>
           <Link to="/test-parameters" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Test Parameters</Link>
-          <Link to="/about" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>About</Link>
+          <Link to="/about" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Why us?</Link>
           <Link to="/contact" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Contact</Link>
         </nav>
         <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-semibold uppercase tracking-wider text-primary-foreground transition hover:scale-105">
