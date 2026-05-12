@@ -1,8 +1,13 @@
-import singleImg from "@/assets/product-single.png";
-import doubleImg from "@/assets/product-double.png";
-import tripleImg from "@/assets/product-triple.webp";
+// NOTE: source files were mis-labelled. Re-mapped below so each product shows the correct picture.
+import fileSingle from "@/assets/product-single.png"; // actually a DOUBLE cover spacer
+import fileDouble from "@/assets/product-double.png"; // actually a TRIPLE cover spacer
+import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cover spacer
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
+
+const singleImg = fileTriple;
+const doubleImg = fileSingle;
+const tripleImg = fileDouble;
 
 export type SpecRow = { code: string; ref: string; cover: string };
 
