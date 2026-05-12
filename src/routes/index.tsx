@@ -77,9 +77,7 @@ function HomePage() {
           playsInline
           preload="auto"
           disableRemotePlayback
-          // @ts-expect-error iOS-specific attribute
-          // eslint-disable-next-line react/no-unknown-property
-          {...{ "x5-playsinline": "true", "webkit-playsinline": "true" }}
+          {...({ "x5-playsinline": "true", "webkit-playsinline": "true" } as Record<string, string>)}
           className="absolute inset-0 h-full w-full object-cover"
           style={{ transform: `scale(${1 + Math.min(scrollY, 800) * 0.0004})` }}
         />
