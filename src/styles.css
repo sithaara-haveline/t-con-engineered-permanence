@@ -100,6 +100,11 @@
 }
 .hero-breath { animation: hero-breath 10s ease-in-out infinite; transform-origin: center; }
 
+@keyframes loading-bar {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-breath, .animate-marquee, .animate-marquee-rev, .animate-float-slow, .animate-pulse-ring { animation: none !important; }
   .reveal, .reveal-left, .reveal-scale { opacity: 1 !important; transform: none !important; }
