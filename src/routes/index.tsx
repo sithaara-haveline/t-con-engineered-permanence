@@ -25,6 +25,7 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const [scrollY, setScrollY] = useState(0);
   const wideRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [wideProgress, setWideProgress] = useState(0);
   const { reduce, mobile } = useReducedAnim();
   const headline = ["WHERE", "VISION", "MEETS", "STRUCTURE."];
@@ -47,14 +48,39 @@ function HomePage() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // iOS Safari: force-mute and attempt autoplay so the play overlay never appears.
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.defaultMuted = true;
+    v.setAttribute("muted", "");
+    v.setAttribute("playsinline", "");
+    v.setAttribute("webkit-playsinline", "");
+    const tryPlay = () => v.play().catch(() => {});
+    tryPlay();
+    const onTouch = () => { tryPlay(); document.removeEventListener("touchstart", onTouch); };
+    document.addEventListener("touchstart", onTouch, { passive: true });
+    return () => document.removeEventListener("touchstart", onTouch);
+  }, []);
+
   return (
     <>
       {/* HERO — cinematic video */}
       <section className="relative min-h-[100svh] w-full overflow-hidden bg-ink">
         <video
+          ref={videoRef}
           src="/tcon-hero.mp4"
-          autoPlay muted loop playsInline
-          className="absolute inset-0 h-full w-full object-cover hero-breath"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          disableRemotePlayback
+          // @ts-expect-error iOS-specific attribute
+          // eslint-disable-next-line react/no-unknown-property
+          {...{ "x5-playsinline": "true", "webkit-playsinline": "true" }}
+          className="absolute inset-0 h-full w-full object-cover"
           style={{ transform: `scale(${1 + Math.min(scrollY, 800) * 0.0004})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-ink/55 via-ink/25 to-ink/75" />
