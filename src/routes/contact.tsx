@@ -7,7 +7,7 @@ export const Route = createFileRoute("/contact")({
       { title: "Contact — TCON Industries" },
       { name: "description", content: "Contact TCON for spacer specifications, samples, or quotes. Aluva, Kerala — India." },
       { property: "og:title", content: "Contact TCON" },
-      { property: "og:description", content: "Talk to us on WhatsApp — +91 90487 11001" },
+      { property: "og:description", content: "Talk to us on WhatsApp" },
     ],
   }),
   component: ContactPage,
@@ -35,7 +35,7 @@ function ContactPage() {
               </address>
               <div className="mt-8 space-y-2 font-mono text-sm text-ink">
                 <a href="tel:+919193410000" className="block hover:text-primary">+91 91934 10000</a>
-                <a href="tel:+919048711001" className="block hover:text-primary">+91 90487 11001</a>
+                <br/>
                 <a href="tel:+919048471000" className="block hover:text-primary">+91 90484 71000</a>
                 <a href="mailto:tcon.spacers@gmail.com" className="block hover:text-primary">tcon.spacers@gmail.com</a>
                 <a href="https://www.t-con.in" className="block hover:text-primary">www.t-con.in</a>
