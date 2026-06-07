@@ -114,7 +114,7 @@ function HomePage() {
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-paper/80 md:text-lg" style={{ animation: "fade-up 1s 0.3s both" }}>
-              Engineered cover blocks and rebar spacers built to outlast the structures they protect. Extra care for excellent creations.
+              Engineered cover blocks and rebar spacers built to outlast the structures they protect.
             </p>
             <motion.div
               className="mt-10 flex flex-wrap gap-4"
@@ -123,7 +123,7 @@ function HomePage() {
               transition={{ duration: 0.6, ease: "easeOut", delay: reduce ? 0 : headlineDone + 0.1 }}
             >
               <Link to="/products" className="glass rounded-full px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:scale-105">Explore Products →</Link>
-              <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
+              <a href="https://wa.me/919048471000" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
             </motion.div>
           </div>
           <motion.img
@@ -137,7 +137,7 @@ function HomePage() {
           </div>
 
           <div className="mt-16 grid max-w-3xl grid-cols-3 gap-4">
-            {[[10,"Years"],[50,"Trusted Clients"],[6,"Countries Served"]].map(([n,l]) => (
+            {[[10,"Years"],[500,"Trusted Clients"],[8,"Countries Served"]].map(([n,l]) => (
               <div key={l as string} className="glass-dark rounded-xl px-5 py-4">
                 <div className="font-display text-3xl text-paper md:text-4xl">
                   <CountUp to={n as number} suffix="+" duration={1500} />
@@ -179,11 +179,11 @@ function HomePage() {
             <Reveal className="md:col-span-7" delay={150}>
               <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— About TCON</p>
               <h2 className="mt-5 font-display text-5xl leading-[0.95] tracking-tight text-ink md:text-6xl">
-                BUILT IN KERALA. <br/><span className="text-stroke">TRUSTED WORLDWIDE.</span>
+                BUILT on quality. <br/><span className="text-stroke">TRUSTED WORLDWIDE.</span>
               </h2>
               <div className="mt-6 space-y-5 text-ink/75 md:text-lg">
                 <p>TCON Industries manufactures fibre reinforced concrete cover blocks and rebar spacers engineered to outlast the structures they protect. Every block is extruded under ISO 9001:2015 controls, tested for compressive strength, water absorption and chloride content.</p>
-                <p>Our spacers share the same thermal expansion as the surrounding concrete — eliminating the hairline failure points introduced by plastic and steel. Specified by infrastructure, marine and high-rise contractors across India and abroad.</p>
+                <p>Our spacers share the same thermal expansion as the surrounding concrete, thus eliminating the hairline failure points introduced by plastic and steel. Specified by infrastructure, marine and high-rise contractors across India and abroad.</p>
               </div>
               <div className="mt-8 grid grid-cols-2 gap-3">
                 <div className="overflow-hidden rounded-lg tilt-card">
@@ -216,7 +216,7 @@ function HomePage() {
               className="text-center"
               style={{ opacity: Math.min(1, Math.max(0, (wideProgress - 0.25) * 2.5)), transform: `translateY(${(0.5 - wideProgress) * 80}px)` }}
             >
-              <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">— Production · Aluva, Kerala</p>
+              <p className="font-mono text-xs uppercase tracking-[0.4em] text-primary">&nbsp;</p>
               <h2 className="mt-4 font-display text-5xl leading-[0.9] tracking-tight text-paper md:text-8xl">EVERY BLOCK,<br/><span className="text-primary">EXTRUDED.</span> TESTED.</h2>
               <div className="mx-auto mt-8 inline-block glass-dark rounded-full px-6 py-3 font-mono text-[11px] uppercase tracking-[0.35em] text-paper/90">Thousands a day · Identical · Verified</div>
             </div>
@@ -245,7 +245,7 @@ function HomePage() {
           </Reveal>
           <Reveal className="md:col-span-7" delay={150}>
             <div className="space-y-6 text-base leading-relaxed text-ink/75 md:text-lg">
-              <p>TCON Spacers are extruded fibre-reinforced concrete blocks engineered to share the same thermal expansion as the structure they protect — eliminating the potential failure points that plastic or steel spacers introduce.</p>
+              <p>Unlike plastic or steel spacers, TCON Spacers are manufactured from fibre-reinforced concrete, ensuring compatibility with the structure's natural thermal movement. This reduces the risk of durability issues caused by dissimilar materials.</p>
               <p>Sulphate resistant. Chloride resistant. Fire resistant. Built to last as long as the concrete around them — because they <em className="text-primary not-italic">are</em> concrete.</p>
               <p className="font-mono text-sm">Trusted across infrastructure, precast, marine, and high-rise projects.</p>
             </div>
@@ -333,7 +333,7 @@ function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
+                  href="https://wa.me/919048471000?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
                   target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
                 >
@@ -358,9 +358,9 @@ function HomePage() {
             <h2 className="mx-auto max-w-4xl font-display text-5xl leading-[0.9] tracking-tight text-ink md:text-7xl">
               READY TO BUILD<br/>WITH <span className="text-primary">CONFIDENCE?</span>
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-ink/70">Talk to our team for technical specs, samples, or a project quote — direct on WhatsApp.</p>
+            <p className="mx-auto mt-6 max-w-xl text-ink/70">&nbsp;</p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105">Get a quote on WhatsApp</a>
+              <a href="https://wa.me/919048471000?text=Hi%20TCON%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105">Get a quote on WhatsApp</a>
               <Link to="/products" className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper">Browse products</Link>
             </div>
           </Reveal>
