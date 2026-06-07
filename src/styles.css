@@ -115,7 +115,8 @@
 
 @layer base {
   * { border-color: var(--color-border); }
-  html, body { background-color: var(--color-background); color: var(--color-foreground); }
+  html { background-color: var(--color-background); color: var(--color-foreground); }
+  body { background-color: transparent; color: var(--color-foreground); }
   body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -127,11 +128,11 @@
     inset: 0;
     background-image: url('/tcon-watermark.png');
     background-repeat: no-repeat;
-    background-position: center 45vh;
-    background-size: min(55vw, 520px);
-    opacity: 0.04;
+    background-position: center center;
+    background-size: min(32vw, 320px);
+    opacity: 0.05;
     pointer-events: none;
-    z-index: 9;
+    z-index: -1;
     mix-blend-mode: multiply;
   }
   h1, h2, h3, .font-display { font-family: var(--font-display); letter-spacing: 0.01em; }
