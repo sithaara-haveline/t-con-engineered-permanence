@@ -7,7 +7,7 @@ export function Footer() {
       <div className="pointer-events-none absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full bg-primary/10 blur-3xl" />
       <div className="relative mx-auto grid max-w-[1400px] gap-10 px-6 py-20 md:grid-cols-4">
         <div className="md:col-span-2">
-          <img src={logo} alt="TCON Fibre Concrete Spacers" className="h-32 w-auto object-contain" />
+          <img src={logo} alt="TCON Fibre Concrete Spacers" className="h-48 md:h-56 w-auto object-contain" />
           <p className="mt-6 max-w-md font-display text-3xl tracking-wide text-ink">EXTRA CARE FOR EXCELLENT CREATIONS.</p>
           <p className="mt-3 max-w-md text-sm text-ink/65">TCON Industries — ISO 9001:2015 Certified Company. Manufactured in Kerala, India.</p>
         </div>

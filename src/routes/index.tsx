@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import heroImg from "@/assets/tcon-hero-products.png";
 import taglineImg from "@/assets/tagline-creations.png";
 import logoMark from "@/assets/tcon-logo-mark.png";
+import tconWordmark from "@/assets/tcon-wordmark.png";
 import aboutPile from "@/assets/about-spacers-pile.jpg";
 import aboutSite from "@/assets/about-construction.jpg";
 import { Marquee } from "@/components/Marquee";
@@ -126,14 +127,23 @@ function HomePage() {
               <a href="https://wa.me/919048471000" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
             </motion.div>
           </div>
-          <motion.img
-            src={logoMark}
-            alt="TCON"
-            className="hidden md:block h-[18rem] lg:h-[22rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(204,0,0,0.35)]"
+          <motion.div
+            className="hidden md:flex flex-col items-center gap-4"
             initial={{ opacity: 0, scale: reduce ? 1 : 0.6, rotate: reduce ? 0 : -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : 0.6 }}
-          />
+          >
+            <img
+              src={logoMark}
+              alt="TCON"
+              className="h-[18rem] lg:h-[22rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(204,0,0,0.35)]"
+            />
+            <img
+              src={tconWordmark}
+              alt="TCON Fibre Concrete Spacers"
+              className="h-14 lg:h-16 w-auto object-contain bg-paper/90 backdrop-blur-md rounded-lg px-4 py-2"
+            />
+          </motion.div>
           </div>
 
           <div className="mt-16 grid max-w-3xl grid-cols-3 gap-4">
@@ -338,6 +348,13 @@ function HomePage() {
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
                 >
                   Request Technical Data Sheet
+                </a>
+                <a
+                  href="/tcon-brochure.pdf"
+                  download
+                  className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper"
+                >
+                  ↓ Download Brochure
                 </a>
                 <Link
                   to="/test-parameters"
