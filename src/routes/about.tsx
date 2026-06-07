@@ -53,7 +53,7 @@ function AboutPage() {
         <div className="mx-auto grid max-w-[1400px] gap-16 px-6 md:grid-cols-2">
           <Reveal>
             <p className="text-lg leading-relaxed text-ink/80">
-              Trans Emirates Fibre Concrete Industries — known to engineers across India and the Middle East as <strong className="text-primary">TCON</strong> — manufactures extruded fibre-reinforced concrete spacers from our facility in Aluva, Kerala.
+              TCON Industries — known to engineers across India and the Middle East as <strong className="text-primary">TCON Fibre Concrete Rebar Spacers</strong> — manufactures extruded fibre-reinforced concrete spacers.
             </p>
             <p className="mt-5 text-ink/70">
               Originally founded as <em>Transco Spacers</em>, the brand underwent a strategic re-branding to <strong>TCON Spacers</strong> as part of our forward-looking growth into international markets — while retaining the same engineering team, formulation, and quality systems that earned the original name its reputation.
@@ -142,7 +142,7 @@ function AboutPage() {
 
           <Reveal delay={200}>
             <p className="mx-auto mt-14 max-w-4xl text-center font-display text-3xl leading-tight tracking-tight text-ink md:text-5xl">
-              When moisture reaches the steel, the structure fails. <span className="text-primary">TCON ensures it never does.</span>
+              When moisture reaches the steel, the structure fails. <br/><span className="text-primary">TCON ensures it never does.</span>
             </p>
             <p className="mx-auto mt-6 max-w-2xl text-center text-ink/70">
               Specified by structural engineers across India and the Middle East.
