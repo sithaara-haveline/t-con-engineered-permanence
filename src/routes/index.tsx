@@ -123,7 +123,7 @@ function HomePage() {
               transition={{ duration: 0.6, ease: "easeOut", delay: reduce ? 0 : headlineDone + 0.1 }}
             >
               <Link to="/products" className="glass rounded-full px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:scale-105">Explore Products →</Link>
-              <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
+              <a href="https://wa.me/919048471000" target="_blank" rel="noreferrer" className="rounded-full border border-paper/40 px-7 py-4 text-sm font-semibold uppercase tracking-widest text-paper backdrop-blur-md transition hover:bg-paper hover:text-ink">Talk to us</a>
             </motion.div>
           </div>
           <motion.img
@@ -333,7 +333,7 @@ function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
+                  href="https://wa.me/919048471000?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
                   target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
                 >
@@ -358,9 +358,9 @@ function HomePage() {
             <h2 className="mx-auto max-w-4xl font-display text-5xl leading-[0.9] tracking-tight text-ink md:text-7xl">
               READY TO BUILD<br/>WITH <span className="text-primary">CONFIDENCE?</span>
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-ink/70">Talk to our team for technical specs, samples, or a project quote — direct on WhatsApp.</p>
+            <p className="mx-auto mt-6 max-w-xl text-ink/70">&nbsp;</p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105">Get a quote on WhatsApp</a>
+              <a href="https://wa.me/919048471000?text=Hi%20TCON%2C%20I%27d%20like%20a%20quote." target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105">Get a quote on WhatsApp</a>
               <Link to="/products" className="inline-flex items-center gap-2 rounded-full border border-ink px-7 py-4 text-sm font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper">Browse products</Link>
             </div>
           </Reveal>

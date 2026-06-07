@@ -83,7 +83,7 @@ function TestParamsPage() {
           <Reveal delay={150}>
             <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="https://wa.me/919048711001?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
+                href="https://wa.me/919048471000?text=Hi%20TCON%2C%20I%27d%20like%20to%20request%20your%20Technical%20Data%20Sheet."
                 target="_blank" rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-4 text-sm font-semibold uppercase tracking-widest text-primary-foreground transition hover:scale-105"
               >
