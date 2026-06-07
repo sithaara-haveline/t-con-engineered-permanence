@@ -141,7 +141,7 @@ function HomePage() {
             <img
               src={tconWordmark}
               alt="TCON Fibre Concrete Spacers"
-              className="h-14 lg:h-16 w-auto object-contain bg-paper/90 backdrop-blur-md rounded-lg px-4 py-2"
+              className="h-24 lg:h-32 w-auto object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
             />
           </motion.div>
           </div>
