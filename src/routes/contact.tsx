@@ -39,14 +39,14 @@ function ContactPage() {
                 <a href="mailto:tcon.spacers@gmail.com" className="block hover:text-primary">tcon.spacers@gmail.com</a>
                 <a href="https://www.t-con.in" className="block hover:text-primary">www.t-con.in</a>
               </div>
-              <a href="https://wa.me/919048711001" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white">● WhatsApp Us</a>
+              <a href="https://wa.me/919048471000" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white">● WhatsApp Us</a>
             </div>
           </Reveal>
           <Reveal className="lg:col-span-3" delay={150}>
             <div className="overflow-hidden rounded-xl border border-ink/15">
               <iframe
                 title="TCON location"
-                src="https://www.google.com/maps?q=Aluva%20Ernakulam%20Kerala%20683102&output=embed"
+                src="https://www.google.com/maps?q=Tcon+Fibre+Concrete+Industries,+Desom,+Aluva,+Ernakulam,+Kerala+683102&ll=10.130513,76.3662096&z=17&output=embed"
                 width="100%" height="540" style={{ border: 0 }} loading="lazy" referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
