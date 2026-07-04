@@ -128,7 +128,7 @@ function HomePage() {
             </motion.div>
           </div>
           <motion.div
-            className="hidden md:flex flex-col items-center gap-4"
+            className="flex flex-col items-center gap-4 mt-8 md:mt-0"
             initial={{ opacity: 0, scale: reduce ? 1 : 0.6, rotate: reduce ? 0 : -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : 0.6 }}
@@ -136,12 +136,12 @@ function HomePage() {
             <img
               src={logoMark}
               alt="TCON"
-              className="h-[18rem] lg:h-[22rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(204,0,0,0.35)]"
+              className="h-40 md:h-[18rem] lg:h-[22rem] w-auto object-contain drop-shadow-[0_20px_50px_rgba(204,0,0,0.35)]"
             />
             <img
               src={tconWordmark}
               alt="TCON Fibre Concrete Spacers"
-              className="h-24 lg:h-32 w-auto object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
+              className="h-16 md:h-24 lg:h-32 w-auto object-contain drop-shadow-[0_8px_30px_rgba(0,0,0,0.5)]"
             />
           </motion.div>
           </div>
