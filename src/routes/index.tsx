@@ -96,6 +96,10 @@ function HomePage() {
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
+            <div className="mt-4 flex items-center gap-3 md:hidden">
+              <img src={logoMark} alt="TCON" className="h-16 w-auto object-contain drop-shadow-[0_10px_30px_rgba(204,0,0,0.35)]" />
+              <img src={tconWordmark} alt="TCON Fibre Concrete Spacers" className="h-8 w-auto object-contain" />
+            </div>
             <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]">
               <span className="flex flex-wrap gap-x-[0.25em]">
                 {headline.map((w, i) => (
@@ -128,7 +132,7 @@ function HomePage() {
             </motion.div>
           </div>
           <motion.div
-            className="flex flex-col items-center gap-4 mt-8 md:mt-0"
+            className="hidden md:flex flex-col items-center gap-4"
             initial={{ opacity: 0, scale: reduce ? 1 : 0.6, rotate: reduce ? 0 : -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: reduce ? 0 : 0.6 }}
