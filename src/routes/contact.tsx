@@ -39,7 +39,7 @@ function ContactPage() {
                 <a href="mailto:tcon.spacers@gmail.com" className="block hover:text-primary">tcon.spacers@gmail.com</a>
                 <a href="https://www.t-con.in" className="block hover:text-primary">www.t-con.in</a>
               </div>
-              <a href="https://wa.me/919048471000" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white">● WhatsApp Us</a>
+              <a href="https://api.whatsapp.com/send?phone=919048471000" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white">● WhatsApp Us</a>
             </div>
           </Reveal>
           <Reveal className="lg:col-span-3" delay={150}>

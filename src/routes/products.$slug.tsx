@@ -59,29 +59,26 @@ function ProductPage() {
       </section>
 
       <section className="bg-paper py-24">
-        <div className="mx-auto max-w-[1400px] px-6">
+        <div className="mx-auto max-w-[1100px] px-6">
           <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Specifications</p>
-            <h2 className="mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl">SIZE CHART</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Sizes & Specifications</p>
+            <h2 className="mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl">NEED SIZE DETAILS?</h2>
           </Reveal>
           <Reveal delay={150}>
-            <div className="mt-10 overflow-hidden rounded-lg border border-ink/15">
-              <table className="w-full font-mono text-sm">
-                <thead>
-                  <tr className="bg-primary text-primary-foreground">
-                    {product.specHeaders.map((h: string) => <th key={h} className="px-6 py-4 text-left text-xs uppercase tracking-widest">{h}</th>)}
-                  </tr>
-                </thead>
-                <tbody>
-                  {product.specs.map((s: { code: string; ref: string; cover: string }) => (
-                    <tr key={s.code} className="border-t border-ink/10 transition-colors hover:bg-background">
-                      <td className="px-6 py-4 text-ink">{s.code}</td>
-                      <td className="px-6 py-4 text-ink/80">{s.ref}</td>
-                      <td className="px-6 py-4 text-primary">{s.cover}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="mt-8 rounded-2xl border border-ink/15 bg-background p-8 md:p-12">
+              <p className="text-ink/75 md:text-lg">
+                Full size charts, concrete cover options and packing details for the <span className="font-semibold text-ink">{product.name}</span> are shared directly with clients. Message us on WhatsApp and our team will send the exact specifications for your project.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={whatsappLink(`Hi TCON, please share size details and specifications for the ${product.name}.`)}
+                  target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white transition hover:scale-105"
+                >
+                  <span>●</span> Get size details on WhatsApp
+                </a>
+                <Link to="/contact" className="inline-flex items-center gap-2 rounded-full border border-ink px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-ink hover:bg-ink hover:text-paper transition">Contact us</Link>
+              </div>
             </div>
           </Reveal>
         </div>

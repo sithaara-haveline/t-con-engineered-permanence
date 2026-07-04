@@ -57,7 +57,7 @@ export function Navbar() {
           <Link to="/contact" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Contact</Link>
         </nav>
         <div className="flex items-center gap-2">
-          <a href="https://wa.me/919048471000" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary-foreground transition hover:scale-105">
+          <a href="https://api.whatsapp.com/send?phone=919048471000" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary-foreground transition hover:scale-105">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" /> <span className="hidden xs:inline sm:inline">WhatsApp</span><span className="xs:hidden sm:hidden">Chat</span>
           </a>
           <button
