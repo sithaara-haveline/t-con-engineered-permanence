@@ -88,7 +88,19 @@ function ProductPage() {
         <div className="mx-auto max-w-[1400px] px-6">
           <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Other products</p>
           <h2 className="mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl">EXPLORE MORE</h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-4">
+          {/* Mobile: horizontal scroll of smaller cards */}
+          <div className="mt-10 -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 md:hidden">
+            {products.filter(p => p.slug !== product.slug).map((p) => (
+              <Link key={p.slug} to="/products/$slug" params={{ slug: p.slug }} className="group block w-[45%] shrink-0 snap-start">
+                <div className="aspect-square overflow-hidden rounded-md bg-paper">
+                  <img src={p.image} alt={p.name} className="h-full w-full object-contain p-4 transition group-hover:scale-110" />
+                </div>
+                <h3 className="mt-2 font-display text-sm tracking-wide text-ink group-hover:text-primary">{p.name.toUpperCase()}</h3>
+              </Link>
+            ))}
+          </div>
+          {/* Desktop grid */}
+          <div className="mt-10 hidden gap-6 md:grid md:grid-cols-4">
             {products.filter(p => p.slug !== product.slug).map((p) => (
               <Link key={p.slug} to="/products/$slug" params={{ slug: p.slug }} className="group block">
                 <div className="aspect-square overflow-hidden rounded-md bg-paper">
