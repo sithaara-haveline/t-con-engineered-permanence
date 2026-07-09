@@ -74,7 +74,7 @@ export function Navbar() {
 
       {/* Mobile menu drawer */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[68px] z-40 mx-3 origin-top overflow-hidden rounded-2xl glass shadow-xl transition-all duration-300 ${open ? "max-h-[80vh] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95 pointer-events-none"}`}
+        className={`md:hidden fixed inset-x-0 top-[68px] z-40 mx-3 origin-top overflow-hidden rounded-2xl bg-white border border-ink/10 shadow-xl transition-all duration-300 ${open ? "max-h-[80vh] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95 pointer-events-none"}`}
       >
         <nav className="flex flex-col p-3 text-base font-medium text-ink">
           {[

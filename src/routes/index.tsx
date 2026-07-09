@@ -95,10 +95,10 @@ function HomePage() {
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-[1400px] flex-col justify-end px-6 pb-28 pt-40">
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
           <div className="max-w-3xl">
-            <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
-            <div className="mt-4 flex items-center gap-3 md:hidden">
-              <img src={logoMark} alt="TCON" className="h-16 w-auto object-contain drop-shadow-[0_10px_30px_rgba(204,0,0,0.35)]" />
-              <img src={tconWordmark} alt="TCON Fibre Concrete Spacers" className="h-8 w-auto object-contain" />
+            <p className="font-mono text-[11px] uppercase tracking-[0.4em] text-white md:text-primary" style={{ animation: "fade-up 1s both" }}>— TCON · Fibre Concrete Spacers</p>
+            <div className="mt-4 inline-flex items-center gap-3 rounded-2xl bg-white/20 px-4 py-3 backdrop-blur-md ring-1 ring-white/30 md:hidden">
+              <img src={logoMark} alt="TCON" className="h-20 w-auto object-contain drop-shadow-[0_10px_30px_rgba(204,0,0,0.35)]" />
+              <img src={tconWordmark} alt="TCON Fibre Concrete Spacers" className="h-12 w-auto object-contain" />
             </div>
             <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-tight text-paper md:text-[7rem]">
               <span className="flex flex-wrap gap-x-[0.25em]">
