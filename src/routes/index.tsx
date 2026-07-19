@@ -226,7 +226,7 @@ function HomePage() {
           style={{ clipPath: `inset(${Math.max(0, (1 - wideProgress * 2.6) * 50)}% 0 ${Math.max(0, (1 - wideProgress * 2.6) * 50)}% 0)` }}
         >
           <img
-            src={spacersYard.url}
+            src={spacersYard}
             alt="TCON production line"
             className="absolute inset-0 h-full w-full object-cover"
             style={{ transform: `scale(${1.1 + wideProgress * 0.2}) translateY(${(0.5 - wideProgress) * -40}px)` }}
