@@ -4,7 +4,7 @@ import fileDouble from "@/assets/product-double.png"; // actually a TRIPLE cover
 import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cover spacer
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
-import pyramidAsset from "@/assets/pyramid-spacer.png.asset.json";
+import pyramidImg from "@/assets/pyramid-spacer.png";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
@@ -115,7 +115,7 @@ export const products: Product[] = [
     slug: "pyramid-spacer",
     name: "Pyramid Spacer",
     tagline: "Stable support for accurate concrete cover.",
-    image: pyramidAsset.url,
+    image: pyramidImg,
     description: [
       "Pyramid Spacers are designed to provide accurate concrete cover while ensuring excellent stability for reinforcement during casting.",
       "They are the preferred choice for slabs, foundations, pavements, and other horizontal concrete elements where consistent reinforcement positioning and reliable load distribution are essential.",

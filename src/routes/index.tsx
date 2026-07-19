@@ -7,8 +7,8 @@ import logoMark from "@/assets/tcon-logo-mark.png";
 import tconWordmark from "@/assets/tcon-wordmark.png";
 import aboutPile from "@/assets/about-spacers-pile.jpg";
 import aboutSite from "@/assets/about-construction.jpg";
-import isoBadge from "@/assets/iso-9001-2015.png.asset.json";
-import spacersYard from "@/assets/spacers-yard.jpg.asset.json";
+import isoBadge from "@/assets/iso-9001-2015.png";
+import spacersYard from "@/assets/spacers-yard.jpg";
 import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
@@ -184,7 +184,7 @@ function HomePage() {
           </Reveal>
           <Reveal delay={250}>
             <div className="mx-auto mt-10 flex justify-center">
-              <img src={isoBadge.url} alt="ISO 9001:2015 Certified" className="h-24 w-auto md:h-32 object-contain" />
+              <img src={isoBadge} alt="ISO 9001:2015 Certified" className="h-24 w-auto md:h-32 object-contain" />
             </div>
           </Reveal>
         </div>
@@ -226,7 +226,7 @@ function HomePage() {
           style={{ clipPath: `inset(${Math.max(0, (1 - wideProgress * 2.6) * 50)}% 0 ${Math.max(0, (1 - wideProgress * 2.6) * 50)}% 0)` }}
         >
           <img
-            src={spacersYard.url}
+            src={spacersYard}
             alt="TCON production line"
             className="absolute inset-0 h-full w-full object-cover"
             style={{ transform: `scale(${1.1 + wideProgress * 0.2}) translateY(${(0.5 - wideProgress) * -40}px)` }}
