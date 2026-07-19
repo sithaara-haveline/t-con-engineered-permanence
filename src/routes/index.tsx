@@ -7,6 +7,8 @@ import logoMark from "@/assets/tcon-logo-mark.png";
 import tconWordmark from "@/assets/tcon-wordmark.png";
 import aboutPile from "@/assets/about-spacers-pile.jpg";
 import aboutSite from "@/assets/about-construction.jpg";
+import isoBadge from "@/assets/iso-9001-2015.png.asset.json";
+import spacersYard from "@/assets/spacers-yard.jpg.asset.json";
 import { Marquee } from "@/components/Marquee";
 import { Reveal } from "@/components/Reveal";
 import { CountUp } from "@/components/CountUp";
@@ -179,6 +181,11 @@ function HomePage() {
           </Reveal>
           <Reveal variant="scale" delay={150}>
             <img src={heroImg} alt="TCON spacer lineup" className="mx-auto mt-12 w-full max-w-5xl drop-shadow-2xl animate-float-slow" />
+          </Reveal>
+          <Reveal delay={250}>
+            <div className="mx-auto mt-10 flex justify-center">
+              <img src={isoBadge.url} alt="ISO 9001:2015 Certified" className="h-24 w-auto md:h-32 object-contain" />
+            </div>
           </Reveal>
         </div>
       </section>
