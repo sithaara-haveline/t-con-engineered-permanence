@@ -74,6 +74,41 @@
 
 .dark { color-scheme: dark; }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: oklch(0.16 0 0);
+    --foreground: oklch(0.96 0 0);
+    --paper: oklch(0.20 0 0);
+    --bone: oklch(0.24 0 0);
+    --ink: oklch(0.96 0 0);
+    --card: oklch(0.20 0 0);
+    --card-foreground: oklch(0.96 0 0);
+    --popover: oklch(0.20 0 0);
+    --popover-foreground: oklch(0.96 0 0);
+    --secondary: oklch(0.24 0 0);
+    --secondary-foreground: oklch(0.96 0 0);
+    --muted: oklch(0.24 0 0);
+    --muted-foreground: oklch(0.72 0 0);
+    --border: oklch(0.32 0 0);
+    --input: oklch(0.28 0 0);
+  }
+  body::before { mix-blend-mode: screen; opacity: 0.06; }
+  /* Rescue common hardcoded light utilities so text stays legible in dark mode */
+  .bg-white { background-color: var(--card) !important; }
+  .text-black { color: var(--foreground) !important; }
+  .text-ink\/80, .text-ink\/70, .text-ink\/60 { color: color-mix(in oklch, var(--foreground) 80%, transparent) !important; }
+  .glass {
+    background: linear-gradient(135deg, rgba(30,30,30,0.55), rgba(20,20,20,0.25));
+    border-color: rgba(255,255,255,0.12);
+    color: var(--foreground);
+  }
+  .glass:hover {
+    background: linear-gradient(135deg, rgba(40,40,40,0.75), rgba(25,25,25,0.35));
+    border-color: rgba(204,0,0,0.5);
+  }
+}
+
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
