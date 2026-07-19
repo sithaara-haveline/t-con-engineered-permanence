@@ -184,7 +184,7 @@ function HomePage() {
           </Reveal>
           <Reveal delay={250}>
             <div className="mx-auto mt-10 flex justify-center">
-              <img src={isoBadge.url} alt="ISO 9001:2015 Certified" className="h-24 w-auto md:h-32 object-contain" />
+              <img src={isoBadge} alt="ISO 9001:2015 Certified" className="h-24 w-auto md:h-32 object-contain" />
             </div>
           </Reveal>
         </div>
