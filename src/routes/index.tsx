@@ -175,7 +175,7 @@ function HomePage() {
         <div className="mx-auto max-w-[1400px] px-6">
           <Reveal>
             <p className="text-center font-mono text-xs uppercase tracking-[0.35em] text-primary">— Our complete range</p>
-            <h2 className="mt-4 text-center font-display text-5xl leading-[0.9] tracking-tight text-ink md:text-7xl">FIVE BLOCKS. <span className="text-stroke">ONE STANDARD.</span></h2>
+            <h2 className="mt-4 text-center font-display text-5xl leading-[0.9] tracking-tight text-ink md:text-7xl">ISO 9001:2015 Certified.&nbsp;<br/>ONE STANDARD.</h2>
           </Reveal>
           <Reveal variant="scale" delay={150}>
             <img src={heroImg} alt="TCON spacer lineup" className="mx-auto mt-12 w-full max-w-5xl drop-shadow-2xl animate-float-slow" />
@@ -288,7 +288,7 @@ function HomePage() {
           <div className="flex items-end justify-between">
             <Reveal>
               <p className="font-mono text-xs uppercase tracking-[0.35em] text-primary">— Catalogue</p>
-              <h2 className="mt-4 font-display text-6xl tracking-tight text-ink md:text-8xl">FIVE PRODUCTS.<br/>ONE STANDARD.</h2>
+              <h2 className="mt-4 font-display text-6xl tracking-tight text-ink md:text-8xl">every PRODUCT.<br/>ONE STANDARD.</h2>
             </Reveal>
             <Reveal delay={200}>
               <Link to="/products" className="hidden items-center gap-3 rounded-full border border-ink px-6 py-3 text-xs font-semibold uppercase tracking-widest text-ink transition hover:bg-ink hover:text-paper md:inline-flex">
