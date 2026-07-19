@@ -4,6 +4,7 @@ import fileDouble from "@/assets/product-double.png"; // actually a TRIPLE cover
 import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cover spacer
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
+import pyramidAsset from "@/assets/pyramid-spacer.png.asset.json";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
@@ -109,6 +110,18 @@ export const products: Product[] = [
       { code: "RF2032", ref: "For 20–32 mm dia. bars", cover: "200 nos." },
       { code: "RF3240", ref: "For 32–40 mm dia. bars", cover: "50 nos." },
     ],
+  },
+  {
+    slug: "pyramid-spacer",
+    name: "Pyramid Spacer",
+    tagline: "Stable support for accurate concrete cover.",
+    image: pyramidAsset.url,
+    description: [
+      "Pyramid Spacers are designed to provide accurate concrete cover while ensuring excellent stability for reinforcement during casting.",
+      "They are the preferred choice for slabs, foundations, pavements, and other horizontal concrete elements where consistent reinforcement positioning and reliable load distribution are essential.",
+    ],
+    specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
+    specs: [],
   },
 ];
 
