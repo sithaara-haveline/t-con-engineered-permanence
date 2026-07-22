@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logoMark from "@/assets/tcon-logo-mark.png";
 import wordmark from "@/assets/tcon-wordmark.png";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);

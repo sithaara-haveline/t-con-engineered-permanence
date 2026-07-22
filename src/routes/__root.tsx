@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import { Footer } from "@/components/Footer";
 import { PageTransition } from "@/components/PageTransition";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 function NotFoundComponent() {
   return (
@@ -53,7 +54,7 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head><HeadContent /></head>
       <body>
         {children}
@@ -65,7 +66,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <>
+    <ThemeProvider>
       <Cursor />
       <Navbar />
       <main className="min-h-screen">
@@ -75,6 +76,6 @@ function RootComponent() {
       </main>
       <Footer />
       <WhatsAppFab />
-    </>
+    </ThemeProvider>
   );
 }
