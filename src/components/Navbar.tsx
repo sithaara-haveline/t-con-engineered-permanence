@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logoMark from "@/assets/tcon-logo-mark.png";
 import wordmark from "@/assets/tcon-wordmark.png";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,6 +58,7 @@ export function Navbar() {
           <Link to="/contact" className="hover:text-primary [&.active]:text-primary" activeProps={{ className: "active" }}>Contact</Link>
         </nav>
         <div className="flex items-center gap-2">
+          <ThemeToggle />
           <a href="https://api.whatsapp.com/send?phone=919048471000" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-primary px-3 sm:px-4 py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary-foreground transition hover:scale-105">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" /> <span className="hidden xs:inline sm:inline">WhatsApp</span><span className="xs:hidden sm:hidden">Chat</span>
           </a>
@@ -74,7 +76,7 @@ export function Navbar() {
 
       {/* Mobile menu drawer */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[68px] z-40 mx-3 origin-top overflow-hidden rounded-2xl bg-white border border-ink/10 shadow-xl transition-all duration-300 ${open ? "max-h-[80vh] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95 pointer-events-none"}`}
+        className={`md:hidden fixed inset-x-0 top-[68px] z-40 mx-3 origin-top overflow-hidden rounded-2xl bg-background border border-ink/10 shadow-xl transition-all duration-300 ${open ? "max-h-[80vh] opacity-100 scale-100" : "max-h-0 opacity-0 scale-95 pointer-events-none"}`}
       >
         <nav className="flex flex-col p-3 text-base font-medium text-ink">
           {[
