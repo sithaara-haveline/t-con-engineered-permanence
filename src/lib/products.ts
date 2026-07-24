@@ -126,6 +126,20 @@ export const products: Product[] = [
     specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
     specs: [],
   },
+  {
+    slug: "multi-cover-spacer",
+    name: "Multi Cover Spacer",
+    tagline: "Four cover sizes. One versatile spacer.",
+    image: multiImg1.url,
+    images: [multiImg1.url, multiImg2.url],
+    description: [
+      "Multi Cover Spacers are commonly used in reinforced concrete construction to provide multiple concrete cover options in a single spacer.",
+      "They are the recommended choice for projects that require flexibility, accurate reinforcement placement, and simplified inventory management.",
+      "Available Size: 35 / 40 / 45 / 50 mm.",
+    ],
+    specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
+    specs: [],
+  },
 ];
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
