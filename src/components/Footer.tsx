@@ -26,7 +26,7 @@ export function Footer() {
           <address className="mt-4 not-italic text-sm leading-relaxed text-ink/80">
             14/220-B, Desom, Aluva,<br/>Ernakulam, Kerala 683102<br/>India
           </address>
-          <p className="mt-3 font-mono text-xs text-ink/80">+91 91934 10000<br/>+91 90484 71000<br/>tcon.spacers@gmail.com</p>
+          <p className="mt-3 font-mono text-xs text-ink/80">+91 90484 71000<br/>+91 70348 75405<br/>tcon.spacers@gmail.com<br/>www.tcon.in</p>
         </div>
       </div>
       <div className="relative border-t border-ink/10 py-5 text-center font-display text-2xl tracking-[0.4em] text-primary">COMMITTED IN QUALITY</div>

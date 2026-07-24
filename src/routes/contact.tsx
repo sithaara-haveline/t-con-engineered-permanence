@@ -28,16 +28,16 @@ function ContactPage() {
           <Reveal className="lg:col-span-2">
             <div className="glass rounded-xl p-8">
               <p className="font-mono text-xs uppercase tracking-widest text-primary">Headquarters</p>
-              <h3 className="mt-3 font-display text-3xl text-ink">TRANS EMIRATES FIBRE CONCRETE INDUSTRIES</h3>
+              <h3 className="mt-3 font-display text-3xl text-ink">TCON INDUSTRIES</h3>
               <p className="mt-2 font-mono text-xs text-ink/60">ISO 9001:2015 Certified</p>
               <address className="mt-6 not-italic text-ink/80">
-                14/220-B, Desom, Aluva,<br/>Ernakulam District,<br/>Kerala 683102, India
+                14/220-B, Desom, Aluva,<br/>Ernakulam, Kerala 683102<br/>India
               </address>
               <div className="mt-8 space-y-2 font-mono text-sm text-ink">
-                <a href="tel:+919193410000" className="block hover:text-primary">+91 91934 10000</a>
                 <a href="tel:+919048471000" className="block hover:text-primary">+91 90484 71000</a>
+                <a href="tel:+917034875405" className="block hover:text-primary">+91 70348 75405</a>
                 <a href="mailto:tcon.spacers@gmail.com" className="block hover:text-primary">tcon.spacers@gmail.com</a>
-                <a href="https://www.t-con.in" className="block hover:text-primary">www.t-con.in</a>
+                <a href="https://www.tcon.in" className="block hover:text-primary">www.tcon.in</a>
               </div>
               <a href="https://api.whatsapp.com/send?phone=919048471000" target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-2 rounded-full bg-[oklch(0.65_0.18_145)] px-6 py-3.5 text-sm font-semibold uppercase tracking-widest text-white">● WhatsApp Us</a>
             </div>
