@@ -5,8 +5,8 @@ import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cove
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
 import pyramidImg from "@/assets/pyramid-spacer.png";
-import multiImg1 from "@/assets/multi-cover-spacer-1.png.asset.json";
-import multiImg2 from "@/assets/multi-cover-spacer-2.png.asset.json";
+import multiImg1 from "@/assets/multi-cover-spacer-1.jpg";
+import multiImg2 from "@/assets/multi-cover-spacer-2.jpg";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
@@ -130,8 +130,8 @@ export const products: Product[] = [
     slug: "multi-cover-spacer",
     name: "Multi Cover Spacer",
     tagline: "Four cover sizes. One versatile spacer.",
-    image: multiImg1.url,
-    images: [multiImg1.url, multiImg2.url],
+    image: multiImg1,
+    images: [multiImg1, multiImg2],
     description: [
       "Multi Cover Spacers are commonly used in reinforced concrete construction to provide multiple concrete cover options in a single spacer.",
       "They are the recommended choice for projects that require flexibility, accurate reinforcement placement, and simplified inventory management.",
