@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getProduct, products, whatsappLink } from "@/lib/products";
 import { Reveal } from "@/components/Reveal";
+import { useEffect, useState } from "react";
 
 export const Route = createFileRoute("/products/$slug")({
   loader: ({ params }) => {
@@ -23,6 +24,13 @@ export const Route = createFileRoute("/products/$slug")({
 function ProductPage() {
   const { product } = Route.useLoaderData();
   const quoteMsg = `Hi TCON, I'd like a quote for the ${product.name}. Please share pricing and availability.`;
+  const images = product.images && product.images.length > 0 ? product.images : [product.image];
+  const [idx, setIdx] = useState(0);
+  useEffect(() => {
+    if (images.length < 2) return;
+    const t = setInterval(() => setIdx((i) => (i + 1) % images.length), 3000);
+    return () => clearInterval(t);
+  }, [images.length]);
 
   return (
     <>
@@ -37,8 +45,27 @@ function ProductPage() {
           <Reveal>
             <div className="relative aspect-square overflow-hidden rounded-xl bg-paper">
               <div className="absolute inset-0 grid-bg opacity-50" />
-              <img src={product.image} alt={product.name} className="relative h-full w-full object-contain p-10 animate-float-slow" />
+              {images.map((src, i) => (
+                <img
+                  key={src}
+                  src={src}
+                  alt={product.name}
+                  className={`absolute inset-0 h-full w-full object-contain p-10 animate-float-slow transition-opacity duration-700 ${i === idx ? "opacity-100" : "opacity-0"}`}
+                />
+              ))}
               <div className="absolute left-5 top-5 font-mono text-[10px] uppercase tracking-widest text-ink/50">TCON / catalogue</div>
+              {images.length > 1 && (
+                <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+                  {images.map((_, i) => (
+                    <button
+                      key={i}
+                      aria-label={`Show image ${i + 1}`}
+                      onClick={() => setIdx(i)}
+                      className={`h-2 rounded-full transition-all ${i === idx ? "w-6 bg-ink" : "w-2 bg-ink/30 hover:bg-ink/60"}`}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </Reveal>
           <Reveal delay={150}>
