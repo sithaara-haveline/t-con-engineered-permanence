@@ -5,6 +5,8 @@ import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cove
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
 import pyramidImg from "@/assets/pyramid-spacer.png";
+import multiImg1 from "@/assets/multi-cover-spacer-1.png.asset.json";
+import multiImg2 from "@/assets/multi-cover-spacer-2.png.asset.json";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
@@ -18,6 +20,7 @@ export type Product = {
   tagline: string;
   description: string[];
   image: string;
+  images?: string[];
   specHeaders: [string, string, string];
   specs: SpecRow[];
 };
@@ -119,6 +122,20 @@ export const products: Product[] = [
     description: [
       "Pyramid Spacers are designed to provide accurate concrete cover while ensuring excellent stability for reinforcement during casting.",
       "They are the preferred choice for slabs, foundations, pavements, and other horizontal concrete elements where consistent reinforcement positioning and reliable load distribution are essential.",
+    ],
+    specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
+    specs: [],
+  },
+  {
+    slug: "multi-cover-spacer",
+    name: "Multi Cover Spacer",
+    tagline: "Four cover sizes. One versatile spacer.",
+    image: multiImg1.url,
+    images: [multiImg1.url, multiImg2.url],
+    description: [
+      "Multi Cover Spacers are commonly used in reinforced concrete construction to provide multiple concrete cover options in a single spacer.",
+      "They are the recommended choice for projects that require flexibility, accurate reinforcement placement, and simplified inventory management.",
+      "Available Size: 35 / 40 / 45 / 50 mm.",
     ],
     specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
     specs: [],
