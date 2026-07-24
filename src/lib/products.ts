@@ -5,6 +5,8 @@ import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cove
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
 import pyramidImg from "@/assets/pyramid-spacer.png";
+import multiImg1 from "@/assets/multi-cover-spacer-1.png.asset.json";
+import multiImg2 from "@/assets/multi-cover-spacer-2.png.asset.json";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
@@ -18,6 +20,7 @@ export type Product = {
   tagline: string;
   description: string[];
   image: string;
+  images?: string[];
   specHeaders: [string, string, string];
   specs: SpecRow[];
 };
