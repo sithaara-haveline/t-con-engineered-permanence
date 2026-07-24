@@ -45,7 +45,7 @@ function ProductPage() {
           <Reveal>
             <div className="relative aspect-square overflow-hidden rounded-xl bg-paper">
               <div className="absolute inset-0 grid-bg opacity-50" />
-              {images.map((src, i) => (
+              {images.map((src: string, i: number) => (
                 <img
                   key={src}
                   src={src}
@@ -56,7 +56,7 @@ function ProductPage() {
               <div className="absolute left-5 top-5 font-mono text-[10px] uppercase tracking-widest text-ink/50">TCON / catalogue</div>
               {images.length > 1 && (
                 <div className="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2">
-                  {images.map((_, i) => (
+                  {images.map((_: string, i: number) => (
                     <button
                       key={i}
                       aria-label={`Show image ${i + 1}`}
