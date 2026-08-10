@@ -5,9 +5,9 @@ import fileTriple from "@/assets/product-triple.webp"; // actually a SINGLE cove
 import wheelImg from "@/assets/product-wheel.png";
 import rebarImg from "@/assets/product-rebar-cap.png";
 import pyramidImg from "@/assets/pyramid-spacer.png";
-import multiImg1 from "@/assets/multi-cover-spacer-1.jpg";
-import multiImg2 from "@/assets/multi-cover-spacer-2.jpg";
-import meshmenImg from "@/assets/concrete-meshmen.jpg";
+import multiImg1 from "@/assets/multi-cover-spacer-1.png";
+import multiImg2 from "@/assets/multi-cover-spacer-2.png";
+import meshmenImg from "@/assets/concrete-meshmen.png";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
