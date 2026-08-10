@@ -141,6 +141,19 @@ export const products: Product[] = [
     specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
     specs: [],
   },
+  {
+    slug: "concrete-meshmen-40-50",
+    name: "Concrete Meshmen 40/50",
+    tagline: "The heavy-duty spacer for supporting reinforcement mesh.",
+    image: meshmenImg,
+    description: [
+      "Concrete Meshmen 40/50 spacers are designed to support reinforcing mesh and steel reinforcement, maintaining the required distance between the reinforcement and the ground or formwork during concrete placement.",
+      "Their strong concrete construction provides excellent stability and load-bearing capacity, while the distinctive castellated design securely accommodates reinforcement mesh in different directions.",
+      "They are particularly suitable for ground-floor slabs, foundations and other reinforced concrete applications, helping maintain consistent concrete cover and preventing reinforcement from shifting or sagging during the pour.",
+    ],
+    specHeaders: ["Art no.", "Ref.", "Concrete Cover"],
+    specs: [],
+  },
 ];
 
 
