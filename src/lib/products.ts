@@ -7,6 +7,7 @@ import rebarImg from "@/assets/product-rebar-cap.png";
 import pyramidImg from "@/assets/pyramid-spacer.png";
 import multiImg1 from "@/assets/multi-cover-spacer-1.jpg";
 import multiImg2 from "@/assets/multi-cover-spacer-2.jpg";
+import meshmenImg from "@/assets/concrete-meshmen.jpg";
 
 const singleImg = fileTriple;
 const doubleImg = fileSingle;
@@ -141,6 +142,7 @@ export const products: Product[] = [
     specs: [],
   },
 ];
+
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 
