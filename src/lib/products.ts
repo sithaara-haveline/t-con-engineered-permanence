@@ -144,6 +144,7 @@ export const products: Product[] = [
 ];
 
 
+
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 
 export const WHATSAPP_NUMBER = "919048471000";
